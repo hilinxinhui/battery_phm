@@ -5,3 +5,5 @@ data/124_commercial_batteries
 # 训练好的模型未分类，暂不上传
 checkpoints/*.pth
 checkpoints/
+
+.DS_Store
