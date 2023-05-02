@@ -6,4 +6,8 @@ data/124_commercial_batteries
 checkpoints/*.pth
 checkpoints/
 
+# 不上传
 .DS_Store
+
+# 不上传thesis目录下的.obsidian目录
+thesis/.obsidian
