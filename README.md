@@ -19,6 +19,9 @@
 
 本项目使用的电池数据包括：
 
-- 马里兰大学电池老化数据集
-- NASA电池老化数据
-- Stanford商用18650电池老化数据集
+- NASA PCoE Batteries Dataset：https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository
+- CALCE Battery Dataset：https://calce.umd.edu/battery-data
+- TRI Battery Dataset：https://data.matr.io/1/projects/5c48dd2bc625d700019f3204
+- UNIBO Powertools Dataset：https://data.mendeley.com/datasets/n6xg5fzsbv/1
+
+供参考，[这篇文章](https://www.sciencedirect.com/science/article/pii/S2666546821000355)介绍了常用的锂离子电池数据集以及下载地址。
