@@ -1,5 +1,6 @@
 # 数据集，大小超限，可访问https://data.matr.io/1/projects/5c48dd2bc625d700019f3204下载
-data/batch3.pkl
+# data/batch3.pkl
+data/raw_data
 data/124_commercial_batteries
 
 # 训练好的模型未分类，暂不上传
