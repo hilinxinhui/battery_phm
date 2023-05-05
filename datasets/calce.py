@@ -19,7 +19,7 @@ def drop_outlier(array, count, bins):
     return np.array(index)
 
 
-# 从xlsx文件中读取数据
+# 从 xlsx 文件中读取循环数据
 battery_names = ["CS2_35", "CS2_36", "CS2_37", "CS2_38"]
 data_path = "../data/raw_data/calce/"
 battery_data = {}
