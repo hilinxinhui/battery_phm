@@ -19,3 +19,51 @@ NASA数据集中的电池在充放电循环测试中穿插进行阻抗测试，�
 1. 更符合工业需求（PEP指标最高）
 2. 对数据集鲁棒性更高（即使适应不好，也可以通过迁移学习等通过很小的代价大幅提高泛化能力）
 3. 不少新的计算架构/硬件部件被设计设计出来加速深度学习训练和推理
+
+<!-- 2023_05_06 -->
+
+## Matplotlib 中文
+
+- SimHei 下载地址：https://us-logger1.oss-cn-beijing.aliyuncs.com/SimHei.ttf
+- https://blog.csdn.net/weixin_45707277/article/details/118631442
+
+## Matplotlib 多图注释
+
+```Python
+import matplotlib.pyplot as plt
+
+# 创建 1x4 子图网格
+fig, axs = plt.subplots(1, 4, figsize=(15, 3))
+
+# 绘制第一个子图
+axs[0].plot([0, 1, 2, 3], [1, 4, 9, 16])
+axs[0].set_xlabel('X轴')
+axs[0].set_ylabel('Y轴')
+axs[0].set_title('(a)子图标题1')
+
+# 绘制第二个子图
+axs[1].plot([0, 1, 2, 3], [1, 2, 3, 4])
+axs[1].set_xlabel('X轴')
+axs[1].set_ylabel('Y轴')
+axs[1].set_title('(b)子图标题2')
+
+# 绘制第三个子图
+axs[2].plot([0, 1, 2, 3], [1, 3, 5, 7])
+axs[2].set_xlabel('X轴')
+axs[2].set_ylabel('Y轴')
+axs[2].set_title('(c)子图标题3')
+
+# 绘制第四个子图
+axs[3].plot([0, 1, 2, 3], [2, 4, 6, 8])
+axs[3].set_xlabel('X轴')
+axs[3].set_ylabel('Y轴')
+axs[3].set_title('(d)子图标题4')
+
+# 添加带编号的注释
+for i in range(4):
+    axes[i].annotate(f'({chr(97+i)})', xy=(0.5, -0.2), fontsize=12, ha='center', va='center', xycoords='axes fraction')
+
+# 显示图形
+plt.show()
+
+```
