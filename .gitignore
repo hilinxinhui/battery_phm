@@ -12,3 +12,6 @@ checkpoints/
 
 # 不上传thesis目录下的.obsidian目录
 thesis/.obsidian
+
+# 不上传模块下的cache
+utils/__pycache__
