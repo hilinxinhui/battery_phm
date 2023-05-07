@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 
-plt.rcParams["font.family"] = ["SimHei"]  # 设置字体家族
-plt.rcParams["font.sans-serif"] = ["SimHei"]  # 设置无衬线字体
-
+plt.rcParams["font.family"] = ["SimHei"]
+plt.rcParams["font.sans-serif"] = ["SimHei"]
 
 # 绘制 1 * 4 容量退化曲线
 def cap_viz(data, names, title):
