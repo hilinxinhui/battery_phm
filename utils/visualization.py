@@ -27,6 +27,14 @@ plt.rcParams["font.sans-serif"] = ["SimHei"]  # 设置无衬线字体
 # writer = SummaryWriter(log_path)
 # writer.add_graph(model, torch.rand(1, 3, 32, 32))
 
+def plot_single(data, names, title):
+    plt.figure(figsize=(5, 4))
+    for i in range(len(data)):
+        plt.plot(i)
+    plt.legend(names)
+    plt.title(title)
+    plt.show()
+
 # 绘制 1 * 4 容量退化曲线
 def cap_viz(data, names, title):
     fig, axes = plt.subplots(1, 4, figsize=(15, 4))
@@ -46,3 +54,7 @@ def cap_viz(data, names, title):
         )
     plt.tight_layout()
     plt.plot()
+
+if __name__ == "__main__":
+    # plot_single 函数测试
+    plot_single(list(range(10)), ["demo_curve"], "demo")
