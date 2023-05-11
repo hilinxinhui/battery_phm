@@ -71,6 +71,15 @@ plt.show()
 
 ## Matplotlib 保存图片
 
+```Python
+plt.savefig()
+```
+
+- 用`fname`字段指定图片保存的后缀（常用的如jpg格式图片和eps矢量图）
+- 用`dpi`字段指定图像分辨率
+- 设置`bbox_inches="tight"`自适应地找到一个能包含所有元素的框
+- figsize和dpi的关系：https://www.cnblogs.com/lijunjie9502/p/10327151.html#:~:text=matplotlib%20%E4%B8%AD%E8%AE%BE%E7%BD%AE%E5%9B%BE%E5%BD%A2%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%AF%AD%E5%8F%A5%E5%A6%82%E4%B8%8B%EF%BC%9A%20fig%20%3D,plt.figure%20%28figsize%3D%20%28a%2C%20b%29%2C%20dpi%3Ddpi%29
+
 ## Matplotlib 文字中英混排
 
 - 中文宋体
