@@ -35,6 +35,15 @@ def plot_single(data, names, title):
     plt.title(title)
     plt.show()
 
+def save_diagram(index, data, xlabel, ylabel, save_path):
+    plt.figure(figsize=(8, 6))
+    plt.plot(index, data)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=1000, bbox_inches="tight")
+    plt.clf()
+
 # 绘制 1 * 4 容量退化曲线
 def cap_viz(data, names, title):
     fig, axes = plt.subplots(1, 4, figsize=(15, 4))
