@@ -92,3 +92,15 @@ plt.savefig()
 ## 电池数据集
 
 现阶段的电池退化周期非常长，即使只获得加速老化的电池数据也非常消耗时间且对信号收集仪器（“充放电测试盒”）的要求很高。研究通常适用开源数据集。
+
+<!-- 2023_05_13 -->
+
+## Markdown转pdf
+
+- 安装pandoc
+- 安装TeX（TeX Live或MacTeX）
+- 选好字体（macOS可以在字体册中查看）
+
+```Shell
+pandoc input.md -o output.pdf --pdf-engine=xelatex -V CJKmainfont='STSongti-SC-Regular' -V mainfont='Times New Roman'
+```
