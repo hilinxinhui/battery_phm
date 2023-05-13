@@ -32,13 +32,91 @@
 
 cnn、lstm（深度神经网络）结果和ar、svr、mlp（机器学习方法/浅层神经网络）方法对比
 
-（评价指标）
-
 均方根误差（RMSE）
 
 平均绝对误差（MAE）
 
 最大误差（MaxE）
+
+<figure>
+<figcaption>图3- AR模型在CALCE数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_35_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_36_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_37_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_38_ar.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- AR模型在NASA数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0005_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0006_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0007_ar.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0018_ar.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- SVR模型在CALCE数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_35_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_36_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_37_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_38_svr.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- SVR模型在NASA数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0005_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0006_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0007_svr.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0018_svr.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- MLP模型在CALCE数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_35_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_36_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_37_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_38_mlp.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- MLP模型在NASA数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0005_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0006_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0007_mlp.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0018_mlp.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- LSTM模型在CALCE数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_35_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_36_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_37_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_38_lstm.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- LSTM模型在NASA数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0005_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0006_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0007_lstm.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0018_lstm.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- CNN模型在CALCE数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_35_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_36_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_37_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/calce_CS2_38_cnn.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>图3- CNN模型在NASA数据集上的预测结果</figcaption>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0005_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0006_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0007_cnn.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/nasa_B0018_cnn.jpg" width=400 height=300>
+</figure>
 
 ## 3.5 本章小结
 
