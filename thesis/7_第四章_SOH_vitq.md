@@ -19,6 +19,26 @@
 
 两组模型在预测性能和模型参数上的优劣
 
+<figure>
+<figcaption></figcaption>
+<img src="../assets/thesis_figures/chapter_3/tri_group1_viq_1d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group2_viq_1d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group3_viq_1d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group4_viq_1d.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption></figcaption>
+<img src="../assets/thesis_figures/chapter_3/tri_group1_viq_2d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group2_viq_2d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group3_viq_2d.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_3/tri_group4_viq_2d.jpg" width=400 height=300>
+</figure>
+
 ## 4.5 本章小结
 
-本章介绍了一种基于CNN
+（滑动窗口：）
+（ts2img trans：）
+（CNN结构）
+
+本章保持前文使用的滑动窗口方法对锂离子电池充放电循环数据进行分段，并将分段数据作为样本，一方面实现了数据增广，满足了深度神经网络的训练过程对数据量的需求，另一方面为CNN模型对输入数据的鲁棒性奠定基础，很大程度上使得网络对任意起点（相对充放电周期而言）的输入数据都能得到准确的估计结果；其次，本章介绍了一种时间序列到图像变换，使得CNN模型能更好地利用输入数据的时空相关性，同时简化了CNN模型的设计；最后，本章基于上述预处理步骤，简单改进经典的LeNet5网络结构，建立了更符合应用需求的锂离子电池健康状态估计模型，通过短时间内采集的电池充放电直接测量量（电流、电压、电荷量）实现快速的精准的在线健康状态估计。

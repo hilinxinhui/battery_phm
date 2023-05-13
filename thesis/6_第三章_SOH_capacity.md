@@ -2,7 +2,7 @@
 
 在锂离子电池健康状态估计和剩余寿命预测的数据驱动方法早期研究中，研究人员通常使用单一健康因子表征电池退化状态，数据驱动模型通过健康因子的历史变化数据预测其下一时间步的数值并重新映射回电池健康状态。
 
-本章在仔细调研文献和详尽分析锂离子电池公开数据集的基础上，采用NASA数据集（B0005、B0006、B0007和B0018电池）和CALCE数据集（CS2_35、CS2_36、CS2_37和CS2_38电池），使用卷积神经网络（Convolutional Neural Network，CNN）和长短期记忆神经网络（Long Short-Term Memory，LSTM）开展基于历史容量数据的锂离子电池健康状态研究。
+本章在仔细调研文献和详尽分析锂离子电池公开数据集的基础上，采用NASA数据集（B0005、B0006、B0007和B0018电池）和CALCE数据集（CS2_35、CS2_36、CS2_37和CS2_38电池），使用卷积神经网络（Convolutional Neural Network，CNN）和长短期记忆神经网络（Long Short-Term Memory，LSTM）开展基于历史容量数据的锂离子电池健康状态估计方法研究并横向对比自回归（Autoregression，AR）模型、支持向量回归（Support Vector Regression，SVR）模型和多层感知机（Multi-Layer Perceptron，MLP）模型。
 
 ## 3.2 基于长短期记忆神经网络的电池健康状态直接估计方法
 
@@ -18,6 +18,8 @@
 
 ### 3.2.2 长短期记忆神经网络模型
 
+介绍具体模型结构和超参数
+
 ## 3.3 基于卷积神经网络的电池健康状态直接估计方法
 
 ### 3.3.1 卷积神经网络原理
@@ -26,15 +28,17 @@
 
 ### 3.3.2 卷积神经网络模型
 
+介绍具体模型结构和超参数
+
 ## 3.4 实验结果与分析
 
-cnn、lstm（深度神经网络）结果和ar、svr、mlp（机器学习方法/浅层神经网络）方法对比
+本节展示CNN模型和LSTM在CALCE数据集和NASA数据集上进行锂离子电池健康状态估计的效果，并对比AR模型、SVR模型和MLP模型。后三者是早期研究中常用的机器学习/浅层神经网络模型。使用最大误差（Max Error，MaxE）、平均绝对误差（Mean Average Error，MAE）和均方根误差（Root Mean Squared Error，RMSE）评估模型性能。
 
-均方根误差（RMSE）
+评价指标定义分别为【式】【式】和【式】，式中 $n$ 为循环圈数，$\mathbf{y} = \left \{ y_{1}, y_{2}, \ldots, y_{n} \right \} $ 为容量真值，$\hat {\mathbf{y}} = \left \{ \hat{y_{1}} , \hat{y_{2}} , \ldots, \hat{y_{n}} \right \} $ 为模型预测容量值。
 
-平均绝对误差（MAE）
-
-最大误差（MaxE）
+$$MaxE = \max \limits_{1 \leq i \leq n} \lvert y_{i} - \hat{y}_{i} \rvert \tag{3-}$$
+$$ E_{mae} = \frac{1}{n} \sum_{i=1}^{n} \lvert y_{i} - \hat{y}_{i} \rvert, i = 1, 2, \ldots, n \tag{3-}$$
+$$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 1, 2, \ldots, n \tag{3-}$$
 
 <figure>
 <figcaption>图3- AR模型在CALCE数据集上的预测结果</figcaption>
@@ -118,4 +122,4 @@ cnn、lstm（深度神经网络）结果和ar、svr、mlp（机器学习方法/�
 
 ## 3.5 本章小结
 
-本章简要介绍了CNN和LSTM两种模型的原理以及将其用于基于电池历史容量退化数据的电池健康状态估计问题时的超参数配置，。
+本章简要介绍了CNN和LSTM两种模型的原理以及将其用于基于电池历史容量退化数据的电池健康状态估计问题时的超参数配置。
