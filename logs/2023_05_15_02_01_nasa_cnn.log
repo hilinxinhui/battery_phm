@@ -1,0 +1,4 @@
+2023-05-15 02:02:07,794 - nasa_cnn - INFO - test dataset: B0005, maxE: 0.080894, mae: 0.015108, rmse:0.021419
+2023-05-15 02:02:39,296 - nasa_cnn - INFO - test dataset: B0006, maxE: 0.144347, mae: 0.028995, rmse:0.035597
+2023-05-15 02:03:09,994 - nasa_cnn - INFO - test dataset: B0007, maxE: 0.106636, mae: 0.013650, rmse:0.020144
+2023-05-15 02:03:43,555 - nasa_cnn - INFO - test dataset: B0018, maxE: 0.120415, mae: 0.023968, rmse:0.032900

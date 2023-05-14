@@ -1,0 +1,4 @@
+2023-05-15 01:05:42,567 - calce_ar - INFO - test dataset: CS2_35, maxE: 0.170219, mae: 0.009820, rmse:0.019415
+2023-05-15 01:05:43,273 - calce_ar - INFO - test dataset: CS2_36, maxE: 0.066031, mae: 0.010755, rmse:0.014229
+2023-05-15 01:05:43,967 - calce_ar - INFO - test dataset: CS2_37, maxE: 0.107267, mae: 0.009933, rmse:0.014493
+2023-05-15 01:05:44,645 - calce_ar - INFO - test dataset: CS2_38, maxE: 0.122320, mae: 0.011006, rmse:0.016312

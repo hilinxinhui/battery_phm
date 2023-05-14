@@ -1,0 +1,10 @@
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 0, current data: 0.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 10, current data: 100.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 20, current data: 400.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 30, current data: 900.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 40, current data: 1600.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 50, current data: 2500.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 60, current data: 3600.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 70, current data: 4900.
+2023-05-15 00:05:28,985 - logger_test - INFO - current epoch: 80, current data: 6400.
+2023-05-15 00:05:28,986 - logger_test - INFO - current epoch: 90, current data: 8100.
