@@ -15,3 +15,6 @@ thesis/.obsidian
 
 # 不上传模块下的cache
 utils/__pycache__
+
+# 不上传字体
+utils/STSong.ttf
