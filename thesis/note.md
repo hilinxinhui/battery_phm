@@ -82,8 +82,8 @@ plt.savefig()
 
 ## Matplotlib 文字中英混排
 
-- 中文宋体
-- 英文Times New Roman
+实现中文宋体、英文Times New Roman
+
 - 解决方案之一：https://zhuanlan.zhihu.com/p/118601703
 - 解决方案之二：https://www.zhihu.com/question/344490568/answer/936561524
 
