@@ -19,36 +19,92 @@
 
 两组模型在预测性能和模型参数上的优劣
 
+如【图】为
+
 <figure>
-<figcaption></figcaption>
-<img src="../assets/thesis_figures/chapter_3/tri_group1_vit.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group2_vit.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group3_vit.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group4_vit.jpg" width=400 height=300>
+<figcaption>V、I、T输入，不进行时间序列-图形变换（第一组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell4_cnn_vit.jpg" width=400 height=300>
 </figure>
 
 <figure>
-<figcaption></figcaption>
-<img src="../assets/thesis_figures/chapter_3/tri_group1_vit_trans.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group2_vit.jpg_trans" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group3_vit.jpg_trans" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group4_vit.jpg_trans" width=400 height=300>
+<figcaption>V、I、T输入，不进行时间序列-图形变换（第2组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell4_cnn_vit.jpg" width=400 height=300>
 </figure>
 
 <figure>
-<figcaption></figcaption>
-<img src="../assets/thesis_figures/chapter_3/tri_group1_viq.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group2_viq.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group3_viq.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group4_viq.jpg" width=400 height=300>
+<figcaption>V、I、T输入，不进行时间序列-图形变换（第三组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell4_cnn_vit.jpg" width=400 height=300>
 </figure>
 
 <figure>
-<figcaption></figcaption>
-<img src="../assets/thesis_figures/chapter_3/tri_group1_viq_trans.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group2_viq_trans.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group3_viq_trans.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_3/tri_group4_viq_trans.jpg" width=400 height=300>
+<figcaption>V、I、T输入，不进行时间序列-图形变换（第四组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_vit.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell4_cnn_vit.jpg" width=400 height=300>
+</figure>
+
+如【图】为
+
+<figure>
+<figcaption>V、I、T输入，进行时间序列-图形变换（第一组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_cell4_cnn_vit_trans.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>V、I、T输入，进行时间序列-图形变换（第二组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group2_cell4_cnn_vit_trans.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>V、I、T输入，进行时间序列-图形变换（第三组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group3_cell4_cnn_vit_trans.jpg" width=400 height=300>
+</figure>
+
+<figure>
+<figcaption>V、I、T输入，进行时间序列-图形变换（第四组）</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_vit_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group4_cell4_cnn_vit_trans.jpg" width=400 height=300>
+</figure>
+
+如【图】为
+
+<figure>
+<figcaption>V、I、q输入，不进行时间序列-图形变换</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq.jpg" width=400 height=300>
+</figure>
+
+如【图】为
+
+<figure>
+<figcaption>V、I、q输入，进行时间序列-图形变换</figcaption>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq_trans.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_4/tri_group1_viq_trans.jpg" width=400 height=300>
 </figure>
 
 ## 4.5 本章小结

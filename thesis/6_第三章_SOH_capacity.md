@@ -8,13 +8,13 @@
 
 ### 3.2.1 长短期记忆神经网络原理
 
+以深度学习的视角，锂离子电池SOH估计问题可以看做时间序列预测（Time Series Forecast）问题，更具体地，采用历史容量退化数据进行SOH估计的问题属于单变量有监督时间序列回归（Supervised Univariate Time Series Regression）问题。
+
 （RNN）
 
 （RNN存在的问题、LSTM的原理和LSTM是如何解决RNN的问题的）
 
 （使用LSTM实现时间序列预测）
-
-以深度学习的视角，锂离子电池SOH估计问题可以看做时间序列预测（Time Series Forecast）问题，更具体地，采用历史容量退化数据进行SOH估计的问题属于单变量有监督时间序列回归（Supervised Univariate Time Series Regression）问题。
 
 ### 3.2.2 长短期记忆神经网络模型
 
@@ -27,6 +27,8 @@
 尽管卷积神经网络主要被用于计算机视觉领域，但许多文献表明，通过设置特殊网络结构或对输入的时间序列稍加处理，CNN同样具备时间序列处理。
 
 ### 3.3.2 卷积神经网络模型
+
+
 
 介绍具体模型结构和超参数
 
