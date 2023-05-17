@@ -1,0 +1,136 @@
+2023-05-16 13:14:08,783 - tri_vit_cnn - INFO - experiment id: 1
+2023-05-16 13:14:08,783 - tri_vit_cnn - INFO - training dataset batteries index: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+2023-05-16 13:14:08,784 - tri_vit_cnn - INFO - testing dataset batteries index: [0, 1, 2, 3]
+2023-05-16 13:14:09,676 - tri_vit_cnn - INFO - dataloader info: shape of X is torch.Size([128, 1, 3, 225]), shape of y is torch.Size([128, 1])
+2023-05-16 13:14:09,679 - tri_vit_cnn - INFO - 训练开始
+2023-05-16 13:15:17,808 - tri_vit_cnn - INFO - epoch 10, train loss 0.00027197989894894864, validation loss 0.0
+2023-05-16 13:15:17,810 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch10.pth
+2023-05-16 13:16:26,076 - tri_vit_cnn - INFO - epoch 20, train loss 0.0001380694541615068, validation loss 0.0
+2023-05-16 13:16:26,077 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch20.pth
+2023-05-16 13:17:33,044 - tri_vit_cnn - INFO - epoch 30, train loss 9.466133473812651e-05, validation loss 0.0
+2023-05-16 13:17:33,045 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch30.pth
+2023-05-16 13:18:41,381 - tri_vit_cnn - INFO - epoch 40, train loss 7.023108676348992e-05, validation loss 0.0
+2023-05-16 13:18:41,382 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch40.pth
+2023-05-16 13:19:50,094 - tri_vit_cnn - INFO - epoch 50, train loss 5.964289115644391e-05, validation loss 0.0
+2023-05-16 13:19:50,095 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch50.pth
+2023-05-16 13:20:56,756 - tri_vit_cnn - INFO - epoch 60, train loss 5.0320159537028864e-05, validation loss 0.0
+2023-05-16 13:20:56,757 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch60.pth
+2023-05-16 13:22:05,652 - tri_vit_cnn - INFO - epoch 70, train loss 4.4568867834647045e-05, validation loss 0.0
+2023-05-16 13:22:05,653 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch70.pth
+2023-05-16 13:23:13,265 - tri_vit_cnn - INFO - epoch 80, train loss 4.0847758847769246e-05, validation loss 0.0
+2023-05-16 13:23:13,266 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch80.pth
+2023-05-16 13:24:22,040 - tri_vit_cnn - INFO - epoch 90, train loss 3.7480351164776627e-05, validation loss 0.0
+2023-05-16 13:24:22,040 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch90.pth
+2023-05-16 13:25:30,565 - tri_vit_cnn - INFO - epoch 100, train loss 3.569734602265877e-05, validation loss 0.0
+2023-05-16 13:25:30,566 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch100.pth
+2023-05-16 13:26:38,983 - tri_vit_cnn - INFO - epoch 110, train loss 3.2851978581419945e-05, validation loss 0.0
+2023-05-16 13:26:38,984 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch110.pth
+2023-05-16 13:27:46,963 - tri_vit_cnn - INFO - epoch 120, train loss 3.123462279021919e-05, validation loss 0.0
+2023-05-16 13:27:46,964 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group1_epoch120.pth
+2023-05-16 13:27:46,968 - tri_vit_cnn - INFO - 训练完成
+2023-05-16 13:27:55,306 - tri_vit_cnn - INFO - maxE: 0.080675, mae: 0.005777, rmse:0.009629
+2023-05-16 13:28:03,941 - tri_vit_cnn - INFO - maxE: 0.104710, mae: 0.008416, rmse:0.013584
+2023-05-16 13:28:14,439 - tri_vit_cnn - INFO - maxE: 0.143118, mae: 0.014271, rmse:0.019581
+2023-05-16 13:28:23,515 - tri_vit_cnn - INFO - maxE: 0.085639, mae: 0.009094, rmse:0.012709
+2023-05-16 13:28:23,515 - tri_vit_cnn - INFO - experiment id: 2
+2023-05-16 13:28:23,516 - tri_vit_cnn - INFO - training dataset batteries index: [0, 1, 2, 3, 8, 9, 10, 11, 12, 13, 14, 15]
+2023-05-16 13:28:23,516 - tri_vit_cnn - INFO - testing dataset batteries index: [4, 5, 6, 7]
+2023-05-16 13:28:24,481 - tri_vit_cnn - INFO - dataloader info: shape of X is torch.Size([128, 1, 3, 225]), shape of y is torch.Size([128, 1])
+2023-05-16 13:28:24,483 - tri_vit_cnn - INFO - 训练开始
+2023-05-16 13:29:33,069 - tri_vit_cnn - INFO - epoch 10, train loss 0.0001792233886578671, validation loss 0.0
+2023-05-16 13:29:33,071 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch10.pth
+2023-05-16 13:30:40,752 - tri_vit_cnn - INFO - epoch 20, train loss 9.507532128613393e-05, validation loss 0.0
+2023-05-16 13:30:40,753 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch20.pth
+2023-05-16 13:31:48,572 - tri_vit_cnn - INFO - epoch 30, train loss 6.470086048581547e-05, validation loss 0.0
+2023-05-16 13:31:48,572 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch30.pth
+2023-05-16 13:32:56,545 - tri_vit_cnn - INFO - epoch 40, train loss 4.248982668572776e-05, validation loss 0.0
+2023-05-16 13:32:56,547 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch40.pth
+2023-05-16 13:34:04,912 - tri_vit_cnn - INFO - epoch 50, train loss 3.944400612295518e-05, validation loss 0.0
+2023-05-16 13:34:04,913 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch50.pth
+2023-05-16 13:35:11,951 - tri_vit_cnn - INFO - epoch 60, train loss 3.585924949127342e-05, validation loss 0.0
+2023-05-16 13:35:11,951 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch60.pth
+2023-05-16 13:36:19,411 - tri_vit_cnn - INFO - epoch 70, train loss 3.177564857228835e-05, validation loss 0.0
+2023-05-16 13:36:19,412 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch70.pth
+2023-05-16 13:37:27,677 - tri_vit_cnn - INFO - epoch 80, train loss 2.9606380605632844e-05, validation loss 0.0
+2023-05-16 13:37:27,677 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch80.pth
+2023-05-16 13:38:35,369 - tri_vit_cnn - INFO - epoch 90, train loss 2.938416987175595e-05, validation loss 0.0
+2023-05-16 13:38:35,370 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch90.pth
+2023-05-16 13:39:42,903 - tri_vit_cnn - INFO - epoch 100, train loss 2.7570947621509086e-05, validation loss 0.0
+2023-05-16 13:39:42,904 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch100.pth
+2023-05-16 13:40:50,659 - tri_vit_cnn - INFO - epoch 110, train loss 2.5961575668181162e-05, validation loss 0.0
+2023-05-16 13:40:50,660 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch110.pth
+2023-05-16 13:41:59,236 - tri_vit_cnn - INFO - epoch 120, train loss 2.3820059915808106e-05, validation loss 0.0
+2023-05-16 13:41:59,237 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group2_epoch120.pth
+2023-05-16 13:41:59,240 - tri_vit_cnn - INFO - 训练完成
+2023-05-16 13:42:08,021 - tri_vit_cnn - INFO - maxE: 0.139449, mae: 0.010178, rmse:0.014649
+2023-05-16 13:42:15,620 - tri_vit_cnn - INFO - maxE: 0.231956, mae: 0.024860, rmse:0.038719
+2023-05-16 13:42:23,156 - tri_vit_cnn - INFO - maxE: 0.230187, mae: 0.030431, rmse:0.042548
+2023-05-16 13:42:38,732 - tri_vit_cnn - INFO - maxE: 0.192657, mae: 0.013316, rmse:0.021410
+2023-05-16 13:42:38,733 - tri_vit_cnn - INFO - experiment id: 3
+2023-05-16 13:42:38,734 - tri_vit_cnn - INFO - training dataset batteries index: [0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 14, 15]
+2023-05-16 13:42:38,735 - tri_vit_cnn - INFO - testing dataset batteries index: [8, 9, 10, 11]
+2023-05-16 13:42:39,516 - tri_vit_cnn - INFO - dataloader info: shape of X is torch.Size([128, 1, 3, 225]), shape of y is torch.Size([128, 1])
+2023-05-16 13:42:39,520 - tri_vit_cnn - INFO - 训练开始
+2023-05-16 13:43:51,603 - tri_vit_cnn - INFO - epoch 10, train loss 0.00029504944000369133, validation loss 0.0
+2023-05-16 13:43:51,604 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch10.pth
+2023-05-16 13:45:03,664 - tri_vit_cnn - INFO - epoch 20, train loss 0.00014347727678645024, validation loss 0.0
+2023-05-16 13:45:03,665 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch20.pth
+2023-05-16 13:46:15,210 - tri_vit_cnn - INFO - epoch 30, train loss 9.907823441422257e-05, validation loss 0.0
+2023-05-16 13:46:15,211 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch30.pth
+2023-05-16 13:47:26,574 - tri_vit_cnn - INFO - epoch 40, train loss 8.046456647084872e-05, validation loss 0.0
+2023-05-16 13:47:26,575 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch40.pth
+2023-05-16 13:48:38,997 - tri_vit_cnn - INFO - epoch 50, train loss 8.96317996002316e-05, validation loss 0.0
+2023-05-16 13:48:38,997 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch50.pth
+2023-05-16 13:49:50,839 - tri_vit_cnn - INFO - epoch 60, train loss 6.185256514511387e-05, validation loss 0.0
+2023-05-16 13:49:50,840 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch60.pth
+2023-05-16 13:51:02,542 - tri_vit_cnn - INFO - epoch 70, train loss 5.468679987135695e-05, validation loss 0.0
+2023-05-16 13:51:02,544 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch70.pth
+2023-05-16 13:52:14,385 - tri_vit_cnn - INFO - epoch 80, train loss 4.7971313198605985e-05, validation loss 0.0
+2023-05-16 13:52:14,385 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch80.pth
+2023-05-16 13:53:26,513 - tri_vit_cnn - INFO - epoch 90, train loss 4.711467969508054e-05, validation loss 0.0
+2023-05-16 13:53:26,514 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch90.pth
+2023-05-16 13:54:37,245 - tri_vit_cnn - INFO - epoch 100, train loss 4.224611594057009e-05, validation loss 0.0
+2023-05-16 13:54:37,245 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch100.pth
+2023-05-16 13:55:48,291 - tri_vit_cnn - INFO - epoch 110, train loss 3.834373067602908e-05, validation loss 0.0
+2023-05-16 13:55:48,291 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch110.pth
+2023-05-16 13:57:00,078 - tri_vit_cnn - INFO - epoch 120, train loss 3.586653918455379e-05, validation loss 0.0
+2023-05-16 13:57:00,079 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group3_epoch120.pth
+2023-05-16 13:57:00,084 - tri_vit_cnn - INFO - 训练完成
+2023-05-16 13:57:07,314 - tri_vit_cnn - INFO - maxE: 0.065252, mae: 0.005879, rmse:0.008240
+2023-05-16 13:57:16,244 - tri_vit_cnn - INFO - maxE: 0.122149, mae: 0.008426, rmse:0.014798
+2023-05-16 13:57:25,426 - tri_vit_cnn - INFO - maxE: 0.086540, mae: 0.008599, rmse:0.012710
+2023-05-16 13:57:32,665 - tri_vit_cnn - INFO - maxE: 0.053675, mae: 0.005990, rmse:0.008048
+2023-05-16 13:57:32,666 - tri_vit_cnn - INFO - experiment id: 4
+2023-05-16 13:57:32,667 - tri_vit_cnn - INFO - training dataset batteries index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2023-05-16 13:57:32,668 - tri_vit_cnn - INFO - testing dataset batteries index: [12, 13, 14, 15]
+2023-05-16 13:57:33,548 - tri_vit_cnn - INFO - dataloader info: shape of X is torch.Size([128, 1, 3, 225]), shape of y is torch.Size([128, 1])
+2023-05-16 13:57:33,552 - tri_vit_cnn - INFO - 训练开始
+2023-05-16 13:58:45,834 - tri_vit_cnn - INFO - epoch 10, train loss 0.00029013215063400534, validation loss 0.0
+2023-05-16 13:58:45,835 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch10.pth
+2023-05-16 13:59:58,546 - tri_vit_cnn - INFO - epoch 20, train loss 0.00012598497342152017, validation loss 0.0
+2023-05-16 13:59:58,546 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch20.pth
+2023-05-16 14:01:11,841 - tri_vit_cnn - INFO - epoch 30, train loss 8.35865172724764e-05, validation loss 0.0
+2023-05-16 14:01:11,841 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch30.pth
+2023-05-16 14:02:24,969 - tri_vit_cnn - INFO - epoch 40, train loss 6.758212867998316e-05, validation loss 0.0
+2023-05-16 14:02:24,970 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch40.pth
+2023-05-16 14:03:38,157 - tri_vit_cnn - INFO - epoch 50, train loss 5.762699538269428e-05, validation loss 0.0
+2023-05-16 14:03:38,158 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch50.pth
+2023-05-16 14:04:50,415 - tri_vit_cnn - INFO - epoch 60, train loss 5.031622730935487e-05, validation loss 0.0
+2023-05-16 14:04:50,416 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch60.pth
+2023-05-16 14:06:02,291 - tri_vit_cnn - INFO - epoch 70, train loss 4.6757531537027304e-05, validation loss 0.0
+2023-05-16 14:06:02,292 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch70.pth
+2023-05-16 14:07:16,133 - tri_vit_cnn - INFO - epoch 80, train loss 4.279777527312201e-05, validation loss 0.0
+2023-05-16 14:07:16,134 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch80.pth
+2023-05-16 14:08:28,224 - tri_vit_cnn - INFO - epoch 90, train loss 4.545058113850606e-05, validation loss 0.0
+2023-05-16 14:08:28,225 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch90.pth
+2023-05-16 14:09:40,770 - tri_vit_cnn - INFO - epoch 100, train loss 3.9945485388849324e-05, validation loss 0.0
+2023-05-16 14:09:40,771 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch100.pth
+2023-05-16 14:10:53,111 - tri_vit_cnn - INFO - epoch 110, train loss 3.657170036878379e-05, validation loss 0.0
+2023-05-16 14:10:53,112 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch110.pth
+2023-05-16 14:12:05,005 - tri_vit_cnn - INFO - epoch 120, train loss 3.313562507053176e-05, validation loss 0.0
+2023-05-16 14:12:05,006 - tri_vit_cnn - INFO - model save to path: ../../checkpoints/tri_vit_cnn/group4_epoch120.pth
+2023-05-16 14:12:05,008 - tri_vit_cnn - INFO - 训练完成
+2023-05-16 14:12:13,285 - tri_vit_cnn - INFO - maxE: 0.081223, mae: 0.009270, rmse:0.012720
+2023-05-16 14:12:20,550 - tri_vit_cnn - INFO - maxE: 0.049623, mae: 0.005290, rmse:0.007510
+2023-05-16 14:12:28,247 - tri_vit_cnn - INFO - maxE: 0.058140, mae: 0.009501, rmse:0.011965
+2023-05-16 14:12:36,102 - tri_vit_cnn - INFO - maxE: 0.043230, mae: 0.006982, rmse:0.009851
