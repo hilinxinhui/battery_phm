@@ -95,7 +95,7 @@ CNN网络结构中的隐藏层通常包括卷积层（convolution layer）、池
 
 <figure>
 <figcaption>卷积神经网络结构示意图</figcaption>
-<img src="/home/lxh/battery_phm/assets/thesis_figures/chapter_3/cnn_structure.svg">
+<img src="../assets/thesis_figures/chapter_3/cnn_structure.svg">
 </figure>
 
 $$ C(a, t) = f \left ( \sum_{i=0}^{m} \sum_{j=0}^{n} x (a \times s+i, t \times d + j) \omega (i, j) + b \right ) \tag{} $$
@@ -131,7 +131,12 @@ $$MaxE = \max \limits_{1 \leq i \leq n} \lvert y_{i} - \hat{y}_{i} \rvert \tag{3
 
 $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 1, 2, \ldots, n \tag{3-}$$
 
+AR模型是一种典型的无隐状态线性模型，其假定当前时间步的观测值只取决于前 $p$ 个时间步的观测值且表现出线性关系，如【式】。
 
+$$ \hat{y_{t}} = a_{1}y_{t-1} + a_{2}y_{t-2} + \ldots + a_{p}y_{t-p} + \epsilon
+_{t} \tag{} $$
+
+式中 $\epsilon_{t}$ 是随机扰动项（白噪声），$p$ 称为延迟系数。AR模型适用于平稳序列或准平稳序列的回归预测，故首先对原始容量退化数据进行一阶差分使其转换为平稳序列，并依次进行白噪声检验、自相关性分析和偏相关性分析。取延迟系数为16，表示用前16个充放电周期的容量数据估计下一周期的容量。将数据集的后30%设置为测试集（testing dataset），前70%数据按照7：3分割为测试集（training dataset）和验证集（validation dataset）。训练好的AR模型在两个测试集上的MaxE、MAE和RMSE指标统计如【表】，预测结果和真值的可视化对比如【图】。
 
 <figure>
 <figcaption>图3- AR模型在CALCE数据集上的预测结果</figcaption>
@@ -149,6 +154,64 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 <img src="../assets/thesis_figures/chapter_3/nasa_B0018_ar.jpg" width=400 height=300>
 </figure>
 
+<table>
+    <tr>
+        <td></td>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>B0005</td>
+        <td>B0006</td>
+        <td>B0007</td>
+        <td>B0018</td>
+        <td>CS2_35</td>
+        <td>CS2_36</td>
+        <td>CS2_37</td>
+        <td>CS2_38</td>
+    </tr>
+    <tr>
+        <td>MaxE</td>
+        <td>0.047776</td>
+        <td>0.039989</td>
+        <td>0.034233</td>
+        <td>0.094055</td>
+        <td>0.170219</td>
+        <td>0.066031</td>
+        <td>0.107267</td>
+        <td>0.12232</td>
+    </tr>
+    <tr>
+        <td>MAE</td>
+        <td>0.007695</td>
+        <td>0.007895</td>
+        <td>0.005374</td>
+        <td>0.011034</td>
+        <td>0.00982</td>
+        <td>0.010755</td>
+        <td>0.009933</td>
+        <td>0.011006</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>0.012294</td>
+        <td>0.01172</td>
+        <td>0.009433</td>
+        <td>0.019983</td>
+        <td>0.019415</td>
+        <td>0.014229</td>
+        <td>0.014493</td>
+        <td>0.016312</td>
+    </tr>
+</table>
+
 <figure>
 <figcaption>图3- SVR模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_svr.jpg" width=400 height=300>
@@ -164,6 +227,64 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0018_svr.jpg" width=400 height=300>
 </figure>
+
+<table>
+    <tr>
+        <td></td>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>B0005</td>
+        <td>B0006</td>
+        <td>B0007</td>
+        <td>B0018</td>
+        <td>CS2_35</td>
+        <td>CS2_36</td>
+        <td>CS2_37</td>
+        <td>CS2_38</td>
+    </tr>
+    <tr>
+        <td>MaxE</td>
+        <td>0.055918</td>
+        <td>0.165065</td>
+        <td>0.077455</td>
+        <td>0.092054</td>
+        <td>0.173213</td>
+        <td>0.144716</td>
+        <td>0.109326</td>
+        <td>0.138677</td>
+    </tr>
+    <tr>
+        <td>MAE</td>
+        <td>0.029598</td>
+        <td>0.048098</td>
+        <td>0.024318</td>
+        <td>0.03214</td>
+        <td>0.027749</td>
+        <td>0.024278</td>
+        <td>0.021895</td>
+        <td>0.020879</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>0.032088</td>
+        <td>0.05428</td>
+        <td>0.026477</td>
+        <td>0.035924</td>
+        <td>0.0316</td>
+        <td>0.032347</td>
+        <td>0.025152</td>
+        <td>0.024601</td>
+    </tr>
+</table>
 
 <figure>
 <figcaption>图3- MLP模型在CALCE数据集上的预测结果</figcaption>
@@ -181,6 +302,64 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 <img src="../assets/thesis_figures/chapter_3/nasa_B0018_mlp.jpg" width=400 height=300>
 </figure>
 
+<table>
+    <tr>
+        <td></td>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>B0005</td>
+        <td>B0006</td>
+        <td>B0007</td>
+        <td>B0018</td>
+        <td>CS2_35</td>
+        <td>CS2_36</td>
+        <td>CS2_37</td>
+        <td>CS2_38</td>
+    </tr>
+    <tr>
+        <td>MaxE</td>
+        <td>0.072808</td>
+        <td>0.157375</td>
+        <td>0.098959</td>
+        <td>0.116287</td>
+        <td>0.175253</td>
+        <td>0.13257</td>
+        <td>0.11689</td>
+        <td>0.166985</td>
+    </tr>
+    <tr>
+        <td>MAE</td>
+        <td>0.018195</td>
+        <td>0.022015</td>
+        <td>0.012891</td>
+        <td>0.023748</td>
+        <td>0.008996</td>
+        <td>0.010223</td>
+        <td>0.008369</td>
+        <td>0.009344</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>0.02181</td>
+        <td>0.032336</td>
+        <td>0.019159</td>
+        <td>0.03173</td>
+        <td>0.014933</td>
+        <td>0.015308</td>
+        <td>0.012758</td>
+        <td>0.014805</td>
+    </tr>
+</table>
+
 <figure>
 <figcaption>图3- LSTM模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_lstm.jpg" width=400 height=300>
@@ -197,6 +376,64 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 <img src="../assets/thesis_figures/chapter_3/nasa_B0018_lstm.jpg" width=400 height=300>
 </figure>
 
+<table>
+    <tr>
+        <td></td>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>B0005</td>
+        <td>B0006</td>
+        <td>B0007</td>
+        <td>B0018</td>
+        <td>CS2_35</td>
+        <td>CS2_36</td>
+        <td>CS2_37</td>
+        <td>CS2_38</td>
+    </tr>
+    <tr>
+        <td>MaxE</td>
+        <td>0.15179</td>
+        <td>0.17674</td>
+        <td>0.133804</td>
+        <td>0.171014</td>
+        <td>0.160861</td>
+        <td>0.179085</td>
+        <td>0.138158</td>
+        <td>0.130194</td>
+    </tr>
+    <tr>
+        <td>MAE</td>
+        <td>0.041876</td>
+        <td>0.047997</td>
+        <td>0.042824</td>
+        <td>0.03454</td>
+        <td>0.028106</td>
+        <td>0.041033</td>
+        <td>0.028373</td>
+        <td>0.017837</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>0.057897</td>
+        <td>0.068772</td>
+        <td>0.054669</td>
+        <td>0.047809</td>
+        <td>0.033164</td>
+        <td>0.05132</td>
+        <td>0.033656</td>
+        <td>0.022234</td>
+    </tr>
+</table>
+
 <figure>
 <figcaption>图3- CNN模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_cnn.jpg" width=400 height=300>
@@ -212,6 +449,64 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0018_cnn.jpg" width=400 height=300>
 </figure>
+
+<table>
+    <tr>
+        <td></td>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>B0005</td>
+        <td>B0006</td>
+        <td>B0007</td>
+        <td>B0018</td>
+        <td>CS2_35</td>
+        <td>CS2_36</td>
+        <td>CS2_37</td>
+        <td>CS2_38</td>
+    </tr>
+    <tr>
+        <td>MaxE</td>
+        <td>0.080894</td>
+        <td>0.144347</td>
+        <td>0.106636</td>
+        <td>0.120415</td>
+        <td>0.171052</td>
+        <td>0.125632</td>
+        <td>0.115335</td>
+        <td>0.156275</td>
+    </tr>
+    <tr>
+        <td>MAE</td>
+        <td>0.015108</td>
+        <td>0.028995</td>
+        <td>0.01365</td>
+        <td>0.023968</td>
+        <td>0.006961</td>
+        <td>0.008843</td>
+        <td>0.009104</td>
+        <td>0.007127</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>0.021419</td>
+        <td>0.035597</td>
+        <td>0.020144</td>
+        <td>0.0329</td>
+        <td>0.012499</td>
+        <td>0.014274</td>
+        <td>0.01343</td>
+        <td>0.01289</td>
+    </tr>
+</table>
 
 ## 3.5 本章小结
 
