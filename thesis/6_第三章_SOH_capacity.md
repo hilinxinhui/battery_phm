@@ -76,8 +76,6 @@ $$\left \{
 
 具体地，本章使用CALCE数据集中CS2分组中的四颗单体电池（编号为CS2_35、CS2_36、CS2_37和CS2_38）的容量退化数据和NASA PCoE电池数据集中的四颗单体电池（编号为B0005、B0006、B0007和B0008）的容量退化数据，对于这两个数据集的具体内容已在第二章详细说明，本章从略。LSTM模型实验先对数据集进行滑动窗口处理，设置窗口大小为16，在通过时间窗口方法将原始电池容量退化序列重构为序列-标签形式的样本后，针对每个数据集，将其中一颗电池数据作为测试集（testing dataset），剩下三颗电池的数据按7:3比例划分为训练集（training dataset）和验证集（validation dataset）。
 
-
-
 <table>
     <caption>表3-1 LSTM模型参数设置</caption>
     <tr>
@@ -106,7 +104,7 @@ $$\left \{
     </tr>
 </table>
 
-设置均方误差（Mean Squared Error，MSE）为损失函数，其定义如【式3-20】，式中 $n$ 为循环圈数，$\mathbf{y} = \left \{ y_{1}, y_{2}, \ldots, y_{n} \right \} $ 为容量真值，$\hat {\mathbf{y}} = \left \{ \hat{y_{1}} , \hat{y_{2}} , \ldots, \hat{y_{n}} \right \} $ 为模型预测容量值。
+本章使用的LSTM模型包括一个LSTM层和两个全连接层，模型中每一层的类型、输出姓朱那个和参数量如【表3-1】，表中对输出形状的描述略去了对批量（batch size）大小的记录。具体地，在LSTM层设置了100个神经元（记忆单元），LSTM层的输出经过有两个全连接层组成的感知机后映射到预测的容量值，每一层在训练时均引入暂退法（dropout），暂退概率（dropout rate）设置为0.2，同时每层设置ReLU函数为激活函数。训练时设置批大小（batch size）为16，训练轮数（epoch）为120，使用Adam优化器，设置学习率为0.0001，设置均方误差（Mean Squared Error，MSE）为损失函数，其定义如【式3-20】，式中 $n$ 为循环圈数，$\mathbf{y} = \left \{ y_{1}, y_{2}, \ldots, y_{n} \right \} $ 为容量真值，$\hat {\mathbf{y}} = \left \{ \hat{y_{1}} , \hat{y_{2}} , \ldots, \hat{y_{n}} \right \} $ 为模型预测容量值。
 
 $$E_{mse} = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2} , i = 1, 2, \ldots, n \tag{3-20}$$
 
@@ -116,7 +114,7 @@ $$ MaxE = \max \limits_{1 \leq i \leq n} \lvert y_{i} - \hat{y}_{i} \rvert \tag{
 $$ E_{mae} = \frac{1}{n} \sum_{i=1}^{n} \lvert y_{i} - \hat{y}_{i} \rvert, i = 1, 2, \ldots, n \tag{3-22} $$
 $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 1, 2, \ldots, n \tag{3-23} $$
 
-实验结果见本章第四节，其中【表】记录了LSTM模型分别在NASA PCoE数据集和CALCE数据集上的三项评估指标，【图】和【图】为LSTM模型预测的电池容量与电池容量真值的可视化对比。
+实验结果见本章第四节，其中【表3-6】记录了LSTM模型分别在NASA PCoE数据集和CALCE数据集上的三项评估指标，【图3-10】和【图3-11】为LSTM模型预测的电池容量与电池容量真值的可视化对比。
 
 ## 3.3 基于卷积神经网络的电池健康状态直接估计方法
 
@@ -127,17 +125,17 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 CNN网络结构中的隐藏层通常包括卷积层（convolution layer）、池化层（pooling layer）和全连接层（fully-connected layer）。如【图】是一个省略了输入层和输出层的CNN网络结构示意图。CNN通过引入卷积操作替换直接进行的线性变换实现相邻层间的映射，使隐藏层中每一层上的神经元变得相对稀疏，具体地，设置一个相对小的卷积核（kernel），通过滑动窗口方法比那里输入层或中间特征图，考虑二维情形，设 $x$ 为输入，$C(a, t)$ 为卷积后得到的特征图在第 $a$ 行、第 $t$ 列 的元素值，卷积核大小为 $(m, n)$，卷积时滑动窗口的移动步幅（stride）为 $(s, d)$，权重参数为 $\omega$，偏置参数为 $b$，激活函数为 $f$，卷积过程的数学表述如【式】。对于激活函数，通常使用线性整流（Rectified Linear Unit，ReLU）函数，其定义如【式】。
 
 <figure>
-<figcaption>卷积神经网络结构示意图</figcaption>
+<figcaption>图3-3 卷积神经网络结构示意图</figcaption>
 <img src="../assets/thesis_figures/chapter_3/cnn_structure.svg">
 </figure>
 
-$$ C(a, t) = f \left ( \sum_{i=0}^{m} \sum_{j=0}^{n} x (a \times s+i, t \times d + j) \omega (i, j) + b \right ) \tag{} $$
+$$ C(a, t) = f \left ( \sum_{i=0}^{m} \sum_{j=0}^{n} x (a \times s+i, t \times d + j) \omega (i, j) + b \right ) \tag{3-24} $$
 
-$$ f(x) = \max(0, x) $$
+$$ f(x) = \max(0, x) \tag{3-25} $$
 
-多数CNN具有卷积-池化的交错结构，池化层的作用为降采样，即降低输出到下一层的特征图维度以减小计算开销，提高计算速度。通常采用最大池化或平均池化，这里以最大池化为例，其数学表述如【】，其他符号约定与【式】中相同。
+多数CNN具有卷积-池化的交错结构，池化层的作用为降采样，即降低输出到下一层的特征图维度以减小计算开销，提高计算速度。通常采用最大池化或平均池化，这里以最大池化为例，其数学表述如【式】，其他符号约定与【式】中相同。
 
-$$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a \times s + i, t \times d + j) \right \} \tag{} $$
+$$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a \times s + i, t \times d + j) \right \} \tag{3-26} $$
 
 全连接层和MLP一致，提供从输入到输出的映射，具体地，输入经过若干卷积-池化交替结构后输出一个包含需要的抽象特征信息的特征图，特征图在送入全连接层之前先被展平为一维向量，此时特征相应区域在展平的向量中的分布并不确定，全连接层能够消除分布差异对最终结果的影响，同时修改输出的形状，如对回归问题，高维特征图通过若干全连接层后逐步降维，最后输出一个标量数值。
 
@@ -145,9 +143,7 @@ $$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a 
 
 ### 3.3.2 卷积神经网络模型
 
-使用CNN处理时间序列，同样在时间序列上进行滑动窗口处理。设置窗口大小为16，即使用过去16个循环（时间步）的容量退化数据估计当前循环（时间步）的电池容量。
-
-（介绍具体模型结构和超参数）
+使用CNN处理时间序列，同样在时间序列上进行滑动窗口处理。设置窗口大小为16，即使用过去16个循环（时间步）的容量退化数据估计当前循环（时间步）的电池容量。将原始时间序列数据重构为序列-目标值形式的样本后，针对两个数据集，同样采用留一法，取一颗电池数据作为训练集，剩余电池数据按7:3比例划分为训练集和验证集。
 
 <table>
     <caption>表3-2 CNN模型参数设置</caption>
@@ -183,7 +179,7 @@ $$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a 
     </tr>
 </table>
 
-
+本章使用的CNN模型包含两个卷积层和两个全连接层，模型中每一层的类型、输出形状和参数数量描述如【表3-2】，同样省略对批大小的记录。具体地，两个卷积层均采用一维卷积，设置第一个卷积核通道数为64，卷积核大小为2，设置第二个卷积核通道数为32，卷积核大小为2，输入经过两个卷积层生成的特征图再通过两个全连接层降维后映射为预测容量值。每层输出结果都经过ReLU函数激活。训练时设置批大小为16，训练轮数为500，使用Adam优化器，使用MSE作为损失函数，设置学习率为0.00001，使用MaxE、MAE和RMSE作为模型性能评价指标。实验结果见本章第四节，其中【表3-7】记录了CNN模型分别在NASA PCoE数据集和CALCE数据集上的三项评估指标，【图3-12】和【图3-13】为CNN模型预测的电池容量与电池容量真值的可视化对比。
 
 ## 3.4 实验结果与分析
 
@@ -192,12 +188,12 @@ $$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a 
 AR模型是一种典型的无隐状态线性模型，其假定当前时间步的观测值只取决于前 $p$ 个时间步的观测值且表现出线性关系，如【式】。
 
 $$ \hat{y_{t}} = a_{1}y_{t-1} + a_{2}y_{t-2} + \ldots + a_{p}y_{t-p} + \epsilon
-_{t} \tag{} $$
+_{t} \tag{3-27} $$
 
-式中 $\epsilon_{t}$ 是随机扰动项（白噪声），$p$ 称为延迟系数。AR模型适用于平稳序列或准平稳序列的回归预测，故首先对原始容量退化数据进行一阶差分使其转换为平稳序列，并依次进行白噪声检验、自相关性分析和偏相关性分析。取延迟系数为16，表示用前16个充放电周期的容量数据估计下一周期的容量。将数据集的后30%设置为测试集，前70%数据按照7：3分割为测试集和验证集。训练好的AR模型在两个测试集上的MaxE、MAE和RMSE指标统计如【表】，预测结果和真值的可视化对比如【图】。
+式中 $\epsilon_{t}$ 是随机扰动项（白噪声），$p$ 称为延迟系数。AR模型适用于平稳序列或准平稳序列的回归预测，故首先对原始容量退化数据进行一阶差分使其转换为平稳序列，并依次进行白噪声检验、自相关性分析和偏相关性分析。取延迟系数为16，表示用前16个充放电周期的容量数据估计下一周期的容量。将数据集的后30%设置为测试集，前70%数据按照7：3分割为测试集和验证集。训练好的AR模型在两个测试集上的MaxE、MAE和RMSE指标统计如【表3-3】，预测结果和真值的可视化对比如【图3-4】和【图3-5】。
 
 <figure>
-<figcaption>图3- AR模型在CALCE数据集上的预测结果</figcaption>
+<figcaption>图3-4 AR模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_36_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_37_ar.jpg" width=400 height=300>
@@ -205,7 +201,7 @@ _{t} \tag{} $$
 </figure>
 
 <figure>
-<figcaption>图3- AR模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-5 AR模型在NASA数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_ar.jpg" width=400 height=300>
@@ -271,10 +267,10 @@ _{t} \tag{} $$
     </tr>
 </table>
 
-SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类似，SVR引入“间隔带”概念，使得只有在间隔带边界上的支持向量与对应真值的差异才计入损失，实现了稀疏性，提高了计算效率。同样地，SVR引入了核方法，增加了模型对非线性分布数据的预测准确度。实验中取高斯核，设置模型的惩罚系数为10，设置核函数系数为0.5。实验中对数据集先用滑动窗口方法处理，设置滑动窗口长度为16，再采用留一法，即对数据集中的四颗电池数据，使用其中一颗电池数据作为测试集数据，另外三颗按7:3比例划分为测试集和验证集。后续MLP模型、LSTM模型和CNN模型实验中数据集均采用这种处理方式，不再重复说明。训练好的SVR模型在两个测试集上的各项指标如【表】，预测结果和真值的可视化对比如【图】。
+SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类似，SVR引入“间隔带”概念，使得只有在间隔带边界上的支持向量与对应真值的差异才计入损失，实现了稀疏性，提高了计算效率。同样地，SVR引入了核方法，增加了模型对非线性分布数据的预测准确度。实验中取高斯核，设置模型的惩罚系数为10，设置核函数系数为0.5。实验中对数据集先用滑动窗口方法处理，设置滑动窗口长度为16，再采用留一法，即对数据集中的四颗电池数据，使用其中一颗电池数据作为测试集数据，另外三颗按7:3比例划分为测试集和验证集。后续MLP模型、LSTM模型和CNN模型实验中数据集均采用这种处理方式，不再重复说明。训练好的SVR模型在两个测试集上的各项指标如【表3-4】，预测结果和真值的可视化对比如【图3-6】和【图3-7】。
 
 <figure>
-<figcaption>图3- SVR模型在CALCE数据集上的预测结果</figcaption>
+<figcaption>图3-6 SVR模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_36_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_37_svr.jpg" width=400 height=300>
@@ -282,7 +278,7 @@ SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类�
 </figure>
 
 <figure>
-<figcaption>图3- SVR模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-7 SVR模型在NASA数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_svr.jpg" width=400 height=300>
@@ -290,6 +286,7 @@ SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类�
 </figure>
 
 <table>
+    <caption>表3-4</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -347,10 +344,10 @@ SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类�
     </tr>
 </table>
 
-MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结构示意图。MLP结构包括输入层、隐藏层和输出层，其中层与层间先进行线性变换再通过激活函数得到该层的输出。MLP实验中设置输入层神经元数量为16，与滑动窗口长度对应，输出层神经元数量为1，即为模型预测的电池健康状态数值，设置一个隐藏层，其神经元数量为8，采用ReLU函数作为激活函数，其定义亦在本章第二节给出。数据集分割方式与SVR实验相同，此处从略。训练时，设置一个批量的大小为16，训练轮数为20，使用MAE作为损失函数，使用Adam优化器，设置学习率为0.01。训练好的MLP模型在两个测试集上的各项指标如【表】，预测结果和真值的可视化对比如【图】。
+MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结构示意图。MLP结构包括输入层、隐藏层和输出层，其中层与层间先进行线性变换再通过激活函数得到该层的输出。MLP实验中设置输入层神经元数量为16，与滑动窗口长度对应，输出层神经元数量为1，即为模型预测的电池健康状态数值，设置一个隐藏层，其神经元数量为8，采用ReLU函数作为激活函数，其定义亦在本章第二节给出。数据集分割方式与SVR实验相同，此处从略。训练时，设置一个批量的大小为16，训练轮数为20，使用MAE作为损失函数，使用Adam优化器，设置学习率为0.01。训练好的MLP模型在两个测试集上的各项指标如【表3-5】，预测结果和真值的可视化对比如【图3-8】和【图3-9】。
 
 <figure>
-<figcaption>图3- MLP模型在CALCE数据集上的预测结果</figcaption>
+<figcaption>图3-8 MLP模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_36_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_37_mlp.jpg" width=400 height=300>
@@ -358,7 +355,7 @@ MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结�
 </figure>
 
 <figure>
-<figcaption>图3- MLP模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-9 MLP模型在NASA数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_mlp.jpg" width=400 height=300>
@@ -366,6 +363,7 @@ MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结�
 </figure>
 
 <table>
+    <caption>表3-5</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -423,10 +421,10 @@ MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结�
     </tr>
 </table>
 
-LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第二节说明，此处从略。实验结果如【表】、【图】和【图】。
+LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第二节说明，此处从略。实验结果如【表3-6】、【图3-10】和【图3-11】。
 
 <figure>
-<figcaption>图3- LSTM模型在CALCE数据集上的预测结果</figcaption>
+<figcaption>图3-10 LSTM模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_36_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_37_lstm.jpg" width=400 height=300>
@@ -434,7 +432,7 @@ LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第
 </figure>
 
 <figure>
-<figcaption>图3- LSTM模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-11 LSTM模型在NASA数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_lstm.jpg" width=400 height=300>
@@ -442,6 +440,7 @@ LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第
 </figure>
 
 <table>
+    <caption>表3-6</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -499,10 +498,10 @@ LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第
     </tr>
 </table>
 
-CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第二节说明，此处从略。实验结果如【表】、【图】和【图】。
+CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第二节说明，此处从略。实验结果如【表3-7】、【图3-12】和【图3-13】。
 
 <figure>
-<figcaption>图3- CNN模型在CALCE数据集上的预测结果</figcaption>
+<figcaption>图3-12 CNN模型在CALCE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_35_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_36_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/calce_CS2_37_cnn.jpg" width=400 height=300>
@@ -510,7 +509,7 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
 </figure>
 
 <figure>
-<figcaption>图3- CNN模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-13 CNN模型在NASA数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_cnn.jpg" width=400 height=300>
@@ -518,6 +517,7 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
 </figure>
 
 <table>
+    <caption>表3-7</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -572,6 +572,76 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
         <td>0.014274</td>
         <td>0.01343</td>
         <td>0.01289</td>
+    </tr>
+</table>
+
+将AR模型、SVR模型、MLP模型、LSTM模型和CNN模型在两个数据集上的预测性能取均值汇总如【表3-8】。
+
+<table>
+    <caption>表3-8</caption>
+    <tr>
+        <td>NASA PCoE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>CALCE数据集</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>AR</td>
+        <td>SVR</td>
+        <td>MLP</td>
+        <td>LSTM</td>
+        <td>CNN</td>
+        <td>AR</td>
+        <td>SVR</td>
+        <td>MLP</td>
+        <td>LSTM</td>
+        <td>CNN</td>
+    </tr>
+    <tr>
+        <td>Avg_MaxE</td>
+        <td>0.05401325</td>
+        <td>0.097623</td>
+        <td>0.11135725</td>
+        <td>0.158337</td>
+        <td>0.113073</td>
+        <td>0.11645925</td>
+        <td>0.141483</td>
+        <td>0.1479245</td>
+        <td>0.1520745</td>
+        <td>0.1420735</td>
+    </tr>
+    <tr>
+        <td>Avg_MAE</td>
+        <td>0.0079995</td>
+        <td>0.0335385</td>
+        <td>0.01921225</td>
+        <td>0.04180925</td>
+        <td>0.02043025</td>
+        <td>0.0103785</td>
+        <td>0.02370025</td>
+        <td>0.009233</td>
+        <td>0.02883725</td>
+        <td>0.00800875</td>
+    </tr>
+    <tr>
+        <td>Avg_RMSE</td>
+        <td>0.0133575</td>
+        <td>0.03719225</td>
+        <td>0.02625875</td>
+        <td>0.05728675</td>
+        <td>0.027515</td>
+        <td>0.01611225</td>
+        <td>0.028425</td>
+        <td>0.014451</td>
+        <td>0.0350935</td>
+        <td>0.01327325</td>
     </tr>
 </table>
 
