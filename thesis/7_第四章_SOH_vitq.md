@@ -286,10 +286,12 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell4_cnn_vit.jpg" width=400 height=300>
 </figure>
 
+
+
 如【图4-2】为使用充放电过程中电压、电流和温度数据先进行时间序列-图像变换再输入模型时模型在数据集四个分组上的实验结果。
 
 <figure>
-<figcaption>V、I、T输入，进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-5 V、I、T输入，进行时间序列-图形变换（第一组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -297,7 +299,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、T输入，进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-6 V、I、T输入，进行时间序列-图形变换（第二组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -305,7 +307,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、T输入，进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-7 V、I、T输入，进行时间序列-图形变换（第三组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -313,7 +315,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、T输入，进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-8 V、I、T输入，进行时间序列-图形变换（第四组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -323,7 +325,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 如【图】为
 
 <figure>
-<figcaption>V、I、q输入，不进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-9 V、I、q输入，不进行时间序列-图形变换（第一组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_viq.jpg" width=400 height=300>
@@ -331,7 +333,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，不进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-10 V、I、q输入，不进行时间序列-图形变换（第二组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_viq.jpg" width=400 height=300>
@@ -339,7 +341,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，不进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-11 V、I、q输入，不进行时间序列-图形变换（第三组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_viq.jpg" width=400 height=300>
@@ -347,7 +349,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，不进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-12 V、I、q输入，不进行时间序列-图形变换（第四组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_viq.jpg" width=400 height=300>
@@ -357,7 +359,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 如【图】为
 
 <figure>
-<figcaption>V、I、q输入，进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-13 V、I、q输入，进行时间序列-图形变换（第一组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -365,7 +367,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-14 V、I、q输入，进行时间序列-图形变换（第二组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -373,7 +375,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-15 V、I、q输入，进行时间序列-图形变换（第三组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -381,15 +383,55 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>V、I、q输入，进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-16 V、I、q输入，进行时间序列-图形变换（第四组）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell4_cnn_viq_trans.jpg" width=400 height=300>
 </figure>
 
+<table>
+    <tr>
+        <td>指标</td>
+        <td>第一组实验</td>
+        <td>第二组实验</td>
+        <td>第三组实验</td>
+        <td>第四组实验</td>
+    </tr>
+    <tr>
+        <td>Avg_MaxE</td>
+        <td>0.110513938</td>
+        <td>0.131351188</td>
+        <td>0.085090438</td>
+        <td>0.068284375</td>
+    </tr>
+    <tr>
+        <td>Avg_MAE</td>
+        <td>0.0110175</td>
+        <td>0.01567075</td>
+        <td>0.006604688</td>
+        <td>0.00680725</td>
+    </tr>
+    <tr>
+        <td>Avg_RMSE</td>
+        <td>0.016166938</td>
+        <td>0.021842438</td>
+        <td>0.010835313</td>
+        <td>0.00984525</td>
+    </tr>
+    <tr>
+        <td>模型参数量</td>
+        <td>60421</td>
+        <td>12693</td>
+        <td>60421</td>
+        <td>12693</td>
+    </tr>
+</table>
+
+四组实验的评价指标结果及对应模型参数量汇总如【表4-8】。
+
 ## 4.5 本章小结
 
 本章沿用前文使用的滑动窗口方法进行锂离子电池充放电循环数据分段，直接将将分段数据作为样本，一方面实现了数据增广，满足了深度神经网络的训练过程对数据量的需求，另一方面为CNN模型对输入数据的鲁棒性奠定基础，很大程度上使得网络对任意起点（相对充放电周期而言）的输入数据都能得到准确的估计结果。其次，本章介绍了一种时间序列到图像变换方法，满足了直接基于原始循环过程测量量（电流、电压、电池表面温度和电荷量）进行状态估计的要求，同时使得CNN模型能更好地利用输入数据的时空相关性、提高模型预测精度并简化模型的设计难度和计算复杂度。最后，本章基于上述预处理步骤，提出一种结构简单、性能优异的CNN网络结构，建立了更符合应用需求的锂离子电池健康状态估计模型，消除了对锂离子电池工作机理相关的先验领域知识的需要，同时，模型可以自主学习其参数和权重（离线模型更新），并基于训练结果实现快速的精准的在线健康状态估计（在线模型应用）。
 
-本文进行了四组实验，分别是：1）以电压、电流和温度数据为输入，不进行时间序列-图像变换的实验，2）以电压、电流和温度数据为输入，进行时间序列-图像变换的实验，3）以电压、电流和电池电荷量为输入，不进行时间序列-图像变换的实验和4）以电压、电流和电池电荷量为输入，进行时间序列-图像变换的实验。实验在TRI数据集上进行，统计并对比模型预测精度和模型参数量。实验结果表明，使用电池电荷量替换电池温度作为模型输入可以显著提高模型预测精度（结合具体实验结果说明），而使用时间序列-图像变换能一定程度上提高模型性能（结合具体实验结果说明），同时显著降低模型参数量（结合具体实验结果说明），为模型在实际车机系统上的部署奠定了基础。
+本文进行了四组实验，分别是：1）以电压、电流和温度数据为输入，不进行时间序列-图像变换的实验；2）以电压、电流和温度数据为输入，进行时间序列-图像变换的实验；3）以电压、电流和电池电荷量为输入，不进行时间序列-图像变换的实验；4）以电压、电流和电池电荷量为输入，进行时间序列-图像变换的实验。实验在TRI数据集上进行，统计并对比模型预测精度和模型参数量。实验结果表明，使用电池电荷量替换电池温度作为模型输入可以显著提高模型预测精度（以第二组实验和第四组实验为例，平均MaxE、平均MAE和平均RMSE分别由），尽管使用时间序列-图像变换未必能显著提升模型预测精度，但这种变换能在较小的模型折损代价下（对比一二组实验，使用变换后平均MaxE、平均MAE和平均RMSE指标折损分别为2%、0.4%和0.5%）显著降低模型参数量（使用变换后模型参数量为不使用变换对应的模型的21%），为模型在实际车机系统上的部署奠定了基础。
