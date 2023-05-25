@@ -104,3 +104,13 @@ plt.savefig()
 ```Shell
 pandoc input.md -o output.pdf --pdf-engine=xelatex -V CJKmainfont='STSongti-SC-Regular' -V mainfont='Times New Roman'
 ```
+
+<!-- 2023_05_25 -->
+
+## matplotlib反转x轴
+
+```Python
+import matplotlib.pyplot as plt
+plt.gca().invert_xaxis() # 反转x轴
+# 反转y轴使用invert_yaxis()
+```
