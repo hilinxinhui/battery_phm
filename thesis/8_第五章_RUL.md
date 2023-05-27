@@ -151,6 +151,43 @@ L2正则化
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_7.jpg" width=400 height=300>
 </figure>
 
+<table>
+    <caption>DeepLSTM剩余寿命预测性能</caption>
+    <tr>
+        <td></td>
+        <td>电池003</td>
+        <td>电池011</td>
+        <td>电池013</td>
+        <td>电池006</td>
+        <td>电池044</td>
+        <td>电池039</td>
+        <td>电池041</td>
+        <td>均值</td>
+    </tr>
+    <tr>
+        <td>RMSE</td>
+        <td>3.855191</td>
+        <td>3.102227</td>
+        <td>10.773928</td>
+        <td>10.122581</td>
+        <td>13.871369</td>
+        <td>8.883196</td>
+        <td>4.498271</td>
+        <td>7.872394714</td>
+    </tr>
+    <tr>
+        <td>NRMSE</td>
+        <td>0.035861</td>
+        <td>0.02924</td>
+        <td>0.181346</td>
+        <td>0.028673</td>
+        <td>0.047128</td>
+        <td>0.019219</td>
+        <td>0.051681</td>
+        <td>0.056164</td>
+    </tr>
+</table>
+
 ## 5.5 本章小结
 
 本章讨论了电池剩余寿命的定义和生成过程，介绍了一种新的基于容量的电池剩余寿命定义。
