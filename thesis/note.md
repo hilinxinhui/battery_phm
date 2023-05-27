@@ -114,3 +114,25 @@ import matplotlib.pyplot as plt
 plt.gca().invert_xaxis() # 反转x轴
 # 反转y轴使用invert_yaxis()
 ```
+
+<!-- 2023_05_26 -->
+
+## matplotlib设置图层
+
+设置散点在折线上方显示
+
+```Python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array(ranger(100))
+y = np.sin(x)
+
+# 不设置zorder
+plt.plot(x, y)
+plt.scatter(x, y, c="orange")
+
+# 设置zorder
+plt.plot(x, y, zorder=1)
+plt.scatter(x, y, c="orange", zorder=2)
+```
