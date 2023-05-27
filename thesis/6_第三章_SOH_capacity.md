@@ -67,10 +67,10 @@ LSTM可以缓解梯度消失梯度爆炸问题，在长时间序列处理能力�
 
 $$\left \{
     \begin{array}{lr}
-    (x_{1}, x_{2}, \ldots, x_{m}), x_{m+1}  \\
-    (x_{2}, x_{3}, \ldots, x_{m+1}), x_{m+2}  \\
+    [(x_{1}, x_{2}, \ldots, x_{m}), x_{m+1}]  \\
+    [(x_{2}, x_{3}, \ldots, x_{m+1}), x_{m+2}]  \\
     \ldots \\
-    (x_{n-m}, x_{n-m+1}, \ldots, x_{n-1}), x_{n} (n > m) 
+    [(x_{n-m}, x_{n-m+1}, \ldots, x_{n-1}), x_{n}] (n > m)
     \end{array}
     \right. \tag{3-19} $$
 
@@ -104,9 +104,9 @@ $$\left \{
     </tr>
 </table>
 
-本章使用的LSTM模型包括一个LSTM层和两个全连接层，模型中每一层的类型、输出姓朱那个和参数量如【表3-1】，表中对输出形状的描述略去了对批量（batch size）大小的记录。具体地，在LSTM层设置了100个神经元（记忆单元），LSTM层的输出经过有两个全连接层组成的感知机后映射到预测的容量值，每一层在训练时均引入暂退法（dropout），暂退概率（dropout rate）设置为0.2，同时每层设置ReLU函数为激活函数。训练时设置批大小（batch size）为16，训练轮数（epoch）为120，使用Adam优化器，设置学习率为0.0001，设置均方误差（Mean Squared Error，MSE）为损失函数，其定义如【式3-20】，式中 $n$ 为循环圈数，$\mathbf{y} = \left \{ y_{1}, y_{2}, \ldots, y_{n} \right \} $ 为容量真值，$\hat {\mathbf{y}} = \left \{ \hat{y_{1}} , \hat{y_{2}} , \ldots, \hat{y_{n}} \right \} $ 为模型预测容量值。
+本章使用的LSTM模型包括一个LSTM层和两个全连接层，模型中每一层的类型、输出形状和参数量如【表3-1】，表中对输出形状的描述略去了对批量（batch size）大小的记录。具体地，在LSTM层设置了100个神经元（记忆单元），LSTM层的输出经过有两个全连接层组成的感知机后映射到预测的容量值，每一层在训练时均引入暂退法（dropout），暂退概率（dropout rate）设置为0.2，同时每层设置ReLU函数为激活函数。训练时设置批大小（batch size）为16，训练轮数（epoch）为120，使用Adam优化器，设置学习率为0.0001，设置均方误差（Mean Squared Error，MSE）为损失函数，其定义如【式3-20】，式中 $n$ 为循环圈数，$\mathbf{y} = \left \{ y_{1}, y_{2}, \ldots, y_{n} \right \} $ 为容量真值，$\hat {\mathbf{y}} = \left \{ \hat{y_{1}} , \hat{y_{2}} , \ldots, \hat{y_{n}} \right \} $ 为模型预测容量值。
 
-$$E_{mse} = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2} , i = 1, 2, \ldots, n \tag{3-20}$$
+$$L_{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2} , i = 1, 2, \ldots, n \tag{3-20}$$
 
 使用最大误差（Max Error，MaxE）、平均绝对误差（Mean Absolute Error，MAE）和均方根误差（Root Mean Squared Error，RMSE）评估模型预测性能，其定义分别为【式3-21】、【式3-22】和【式3-23】，式中各种符号记法同【式3-20】。
 
@@ -122,7 +122,7 @@ $$ E_{rmse} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y}_{i})^{2}} , i = 
 
 尽管卷积神经网络主要被用于计算机视觉领域处理高维数据，但许多文献表明【文献】，对时间序列输入稍加变换并辅以合理设计的网络结构，CNN同样具备时间序列处理能力，以下简单介绍卷积神经网络的结构。
 
-CNN网络结构中的隐藏层通常包括卷积层（convolution layer）、池化层（pooling layer）和全连接层（fully-connected layer）。如【图】是一个省略了输入层和输出层的CNN网络结构示意图。CNN通过引入卷积操作替换直接进行的线性变换实现相邻层间的映射，使隐藏层中每一层上的神经元变得相对稀疏，具体地，设置一个相对小的卷积核（kernel），通过滑动窗口方法比那里输入层或中间特征图，考虑二维情形，设 $x$ 为输入，$C(a, t)$ 为卷积后得到的特征图在第 $a$ 行、第 $t$ 列 的元素值，卷积核大小为 $(m, n)$，卷积时滑动窗口的移动步幅（stride）为 $(s, d)$，权重参数为 $\omega$，偏置参数为 $b$，激活函数为 $f$，卷积过程的数学表述如【式】。对于激活函数，通常使用线性整流（Rectified Linear Unit，ReLU）函数，其定义如【式】。
+CNN网络结构中的隐藏层通常包括卷积层（convolution layer）、池化层（pooling layer）和全连接层（fully-connected layer）。如【图】是一个省略了输入层和输出层的CNN网络结构示意图。CNN通过引入卷积操作替换直接进行的线性变换实现相邻层间的映射，使隐藏层中每一层上的神经元变得相对稀疏，具体地，设置一个相对小的卷积核（kernel），通过滑动窗口方法比那里输入层或中间特征图，考虑二维情形，设 $x$ 为输入，$C(a, t)$ 为卷积后得到的特征图在第 $a$ 行、第 $t$ 列 的元素值，卷积核大小为 $(m, n)$，卷积时滑动窗口的移动步幅（stride）为 $(s, d)$，权重参数为 $\omega$，偏置参数为 $b$，激活函数为 $f$，卷积过程的数学表述如【式】。对于激活函数，通常使用线性整流（Rectified Linear Unit，ReLU）函数，其定义如【式3-25】。
 
 <figure>
 <figcaption>图3-3 卷积神经网络结构示意图</figcaption>
@@ -131,7 +131,7 @@ CNN网络结构中的隐藏层通常包括卷积层（convolution layer）、池
 
 $$ C(a, t) = f \left ( \sum_{i=0}^{m} \sum_{j=0}^{n} x (a \times s+i, t \times d + j) \omega (i, j) + b \right ) \tag{3-24} $$
 
-$$ f(x) = \max(0, x) \tag{3-25} $$
+$$ ReLU(x) = \max(0, x) \tag{3-25} $$
 
 多数CNN具有卷积-池化的交错结构，池化层的作用为降采样，即降低输出到下一层的特征图维度以减小计算开销，提高计算速度。通常采用最大池化或平均池化，这里以最大池化为例，其数学表述如【式】，其他符号约定与【式】中相同。
 
