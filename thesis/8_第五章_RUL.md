@@ -142,6 +142,8 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
 
 ## 5.4 实验结果分析
 
+如【图5-1】展示了深度LSTM模型在UNIBO Powertools数据集上的安时剩余寿命预测值和真值的对比示意图，模型预测性能的RMSE和NRMSE指标总结如【表5-3】。模型在电池039上取得最优预测性能，预测结果的NRMSE为1.92%，在电池013上预测结果最差，对应NRMSE为18.1%，模型在测试集的7块电池上取得的平均NRMSE为5.61%，这一结果证明了本章提出的深度LSTM模型在解决电池安时寿命预测问题时的有效性。
+
 <figure>
 <figcaption>图5-1</figcaption>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_cycle_1.jpg" width=400 height=300>
@@ -153,21 +155,8 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_cycle_7.jpg" width=400 height=300>
 </figure>
 
-考虑到实际电池的充放电策略严格遵从满充满放，应用中电池实际循环圈数并不容易确定。但是基于本文 第四章讨论结果，容易通过电池部分充放电段的直接观测数据估计电池放电容量，从而以上使用电池循环圈数作为横坐标建立的安时剩余寿命-循环圈数寿命可以进一步借助循环圈数和电池放电容量/电池健康状态映射生成电池的安时剩余寿命-电池实际容量映射关系。
-
-<figure>
-<figcaption>图5-2</figcaption>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_1.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_2.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_3.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_4.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_5.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_6.jpg" width=400 height=300>
-<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_7.jpg" width=400 height=300>
-</figure>
-
 <table>
-    <caption>DeepLSTM剩余寿命预测性能</caption>
+    <caption>表5-3 DeepLSTM剩余寿命预测性能</caption>
     <tr>
         <td></td>
         <td>电池003</td>
@@ -203,6 +192,20 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
     </tr>
 </table>
 
+考虑到实际电池的充放电策略严格遵从满充满放，应用中电池实际循环圈数并不容易确定。但是基于本文第四章讨论结果，容易通过电池部分充放电段的直接观测数据估计电池放电容量，从而以上使用电池循环圈数作为横坐标建立的安时剩余寿命-循环圈数寿命可以进一步借助循环圈数和电池放电容量/电池健康状态映射生成电池的安时剩余寿命-电池实际容量映射关系，如【图5-2】。从电池放电容量到电池安时剩余寿命的映射为单射，【图5-2】
+
+<figure>
+<figcaption>图5-2</figcaption>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_1.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_2.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_3.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_4.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_5.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_6.jpg" width=400 height=300>
+<img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_7.jpg" width=400 height=300>
+</figure>
+
+
 ## 5.5 本章小结
 
-本章讨论了电池剩余寿命的定义和生成过程，介绍了一种新的基于容量的电池剩余寿命定义。
+本章讨论了电池剩余寿命的定义和生成过程，介绍了一种新的基于容量的电池剩余寿命定义。进一步地，为实现这种剩余寿命的预测，提出了一种深度LSTM模型，在UNIBO Powertools数据集上实现了安时剩余寿命的预测，这一深度LSTM模型在包含7颗具有不同规格、采用不同充放电策略的电池构成的训练集上的预测结果的平均归一化均方根误差仅为5.61%，证明了将其应用与剩余寿命预测问题上的可行性。
