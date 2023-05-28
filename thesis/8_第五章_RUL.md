@@ -23,7 +23,7 @@ $$ RUL_{Ah} = \frac{trapz(M_{current}[:, :], M_{time}[:, :]) - trapz(M_{current}
 首先说明模型的数据输入。使用UNIBO Powertools数据集，该数据集中的电池按照采用的充放电策略被划分为三种类型，分别为标准类型（Standard，S）、高电流类型（High Current，H）和带预处理步骤类型（Pre-conditioned，P），三种类型具体采使用的充放电策略已在第二章第四节中说明，这里不再赘述。上述类型使数据集中电池分组的最重要依据，也是本章实验中最关注的差异。电池实际的分组命名依据更多信息，其形式为XW-C.C-AABB-T，其中X表示电池制造商，W表示电池用途，C.C记录电池额定容量，AABB记录电池的出厂日期，T表示电池的实验类型。其中除电池实验类型外的其他参数不是本实验关注的充电，其具体可取值不做介绍。基于此，将本章中使用的电池数据归纳如【表5-1】，每个电池分组中取一颗电池数据作为测试集，测试集包含7颗电池的数据，剩余电池作为训练集，训练集中包含20颗电池的数据，本章实验不使用验证集，某些分组中有部分电池的观测数据有误，这些电池的数据将被舍弃，不参与实验。每颗电池所属测试集/训练集分组及其舍弃情况同样总结于【表5-1】。
 
 <table>
-    <caption>表5-1 数据集划分</caption>
+    <caption>表5-1 UNIBO Powertools数据集划分</caption>
     <tr>
         <td>电池描述</td>
         <td>训练集电池编号</td>
@@ -101,7 +101,7 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
 实验结果及其分析见本章第四节。
 
 <table>
-    <caption>表5-2 用于RUL预测的DeepRUL网络结构示意图</caption>
+    <caption>表5-2 用于RUL预测的DeepLSTM网络结构</caption>
     <tr>
         <td>层号</td>
         <td>层类型</td>
@@ -151,7 +151,7 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
 如【图5-1】展示了深度LSTM模型在UNIBO Powertools数据集上的安时剩余寿命预测值和真值的对比示意图，模型预测性能的RMSE和NRMSE指标总结如【表5-3】。模型在电池039上取得最优预测性能，预测结果的NRMSE为1.92%，在电池013上预测结果最差，对应NRMSE为18.1%，模型在测试集的7块电池上取得的平均NRMSE为5.61%，这一结果证明了本章提出的深度LSTM模型在解决电池安时寿命预测问题时的有效性。
 
 <figure>
-<figcaption>图5-1</figcaption>
+<figcaption>图5-1 DeepLSTM在UNIBO Powertools数据集上的预测结果（以循环圈数为自变量）</figcaption>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_cycle_1.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_cycle_2.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_cycle_3.jpg" width=400 height=300>
@@ -201,7 +201,7 @@ $$ E_{NRMSE} = \frac{RMSE}{\max (\mathbf y) - \min (\mathbf y)} \tag{5-5} $$
 考虑到实际电池的充放电策略严格遵从满充满放，应用中电池实际循环圈数并不容易确定。但是基于本文第四章讨论结果，容易通过电池部分充放电段的直接观测数据估计电池放电容量，从而以上使用电池循环圈数作为横坐标建立的安时剩余寿命-循环圈数寿命可以进一步借助循环圈数和电池放电容量/电池健康状态映射生成电池的安时剩余寿命-电池实际容量映射关系，如【图5-2】。从电池放电容量到电池安时剩余寿命的映射为单射，但由于部分电池采用的充放电策略导致其放电容量-循环圈数曲线呈现出总体线性递减、频繁局部容量再生的现象，如【图5-3】，使得其安时剩余寿命-放电容量曲线不单调且（容量，剩余寿命）点在循环早期分布较为密集，故【图5-2】采用散点图而非折线图以避免歧义。
 
 <figure>
-<figcaption>图5-2</figcaption>
+<figcaption>图5-2 DeepLSTM在UNIBO Powertools数据集上的预测结果（以放电容量为自变量）</figcaption>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_1.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_2.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_5/unibo_lstm_rul_soh_3.jpg" width=400 height=300>

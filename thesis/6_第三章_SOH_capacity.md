@@ -2,7 +2,7 @@
 
 在锂离子电池健康状态估计和剩余寿命预测的数据驱动方法早期研究中，研究人员通常使用单一健康因子表征电池退化状态，数据驱动模型通过健康因子的历史变化数据预测其下一时间步的数值并重新映射回电池健康状态，从而将锂离子电池健康估计问题转换为一般性的时间序列预测问题。深度学习中的一个分支，循环神经网络（Recurrent Neural Network，RNN）尤其是其变体长短期记忆神经网络（Long Short-Term Memory，LSTM），可以用于处理具有时间相关性的数据；通过简单的预处理将序列数据变换为有监督样本的形式，更多深度学习模型如卷积神经网络（Convolutional Neural Network，CNN）等方法也可以用于时间序列分析和预测。同时，早期时间序列回归方法如自回归（Autoregression，AR）算法，部分机器学习方法如支持向量回归（Support Vector Regression，SVR）算法和浅层深度学习方法如多层感知机（Multi-Layer Perceptron，MLP）算法等常被用于锂离子电池健康状态估计问题中。
 
-本章在仔细调研文献和详尽分析锂离子电池公开数据集的基础上，采用NASA数据集（B0005、B0006、B0007和B0018电池）和CALCE数据集（CS2_35、CS2_36、CS2_37和CS2_38电池），使用CNN和LSTM模型开展基于历史容量数据的锂离子电池健康状态估计方法研究并横向对比AR模型、SVR模型和MLP模型，最后通过时间序列预测问题的常用评价指标分析模型性能。
+本章在仔细调研文献和详尽分析锂离子电池公开数据集的基础上，采用NASA PCoE数据集（B0005、B0006、B0007和B0018电池）和CALCE数据集（CS2_35、CS2_36、CS2_37和CS2_38电池），使用CNN和LSTM模型开展基于历史容量数据的锂离子电池健康状态估计方法研究并横向对比AR模型、SVR模型和MLP模型，最后通过时间序列预测问题的常用评价指标分析模型性能。
 
 ## 3.2 基于长短期记忆神经网络的电池健康状态直接估计方法
 
@@ -77,7 +77,7 @@ $$\left \{
 具体地，本章使用CALCE数据集中CS2分组中的四颗单体电池（编号为CS2_35、CS2_36、CS2_37和CS2_38）的容量退化数据和NASA PCoE电池数据集中的四颗单体电池（编号为B0005、B0006、B0007和B0008）的容量退化数据，对于这两个数据集的具体内容已在第二章详细说明，本章从略。LSTM模型实验先对数据集进行滑动窗口处理，设置窗口大小为16，在通过时间窗口方法将原始电池容量退化序列重构为序列-标签形式的样本后，针对每个数据集，将其中一颗电池数据作为测试集（testing dataset），剩下三颗电池的数据按7:3比例划分为训练集（training dataset）和验证集（validation dataset）。
 
 <table>
-    <caption>表3-1 LSTM模型参数设置</caption>
+    <caption>表3-1 基于历史容量的电池SOH估计LSTM模型结构</caption>
     <tr>
         <td>层号</td>
         <td>层类型</td>
@@ -146,7 +146,7 @@ $$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a 
 使用CNN处理时间序列，同样在时间序列上进行滑动窗口处理。设置窗口大小为16，即使用过去16个循环（时间步）的容量退化数据估计当前循环（时间步）的电池容量。将原始时间序列数据重构为序列-目标值形式的样本后，针对两个数据集，同样采用留一法，取一颗电池数据作为训练集，剩余电池数据按7:3比例划分为训练集和验证集。
 
 <table>
-    <caption>表3-2 CNN模型参数设置</caption>
+    <caption>表3-2 基于历史容量的电池SOH估计CNN模型结构</caption>
     <tr>
         <td>层号</td>
         <td>层类型</td>
@@ -183,7 +183,7 @@ $$ P(a, t) = \mathop{\max}_{0 \le i \le m-1 \atop 0 \le j \le n-1} \left \{ C(a 
 
 ## 3.4 实验结果与分析
 
-本节展示CNN模型和LSTM在CALCE数据集和NASA数据集上进行锂离子电池健康状态估计的效果，并对比AR模型、SVR模型和MLP模型。后三者是早期研究中常用的机器学习/浅层神经网络模型。
+本节展示CNN模型和LSTM在CALCE数据集和NASA PCoE数据集上进行锂离子电池健康状态估计的效果，并对比AR模型、SVR模型和MLP模型。后三者是早期研究中常用的机器学习/浅层神经网络模型。
 
 AR模型是一种典型的无隐状态线性模型，其假定当前时间步的观测值只取决于前 $p$ 个时间步的观测值且表现出线性关系，如【式】。
 
@@ -201,7 +201,7 @@ _{t} \tag{3-27} $$
 </figure>
 
 <figure>
-<figcaption>图3-5 AR模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-5 AR模型在NASA PCoE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_ar.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_ar.jpg" width=400 height=300>
@@ -209,7 +209,7 @@ _{t} \tag{3-27} $$
 </figure>
 
 <table>
-    <caption>表3-3</caption>
+    <caption>表3-3 AR模型预测性能评估结果</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -278,7 +278,7 @@ SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类�
 </figure>
 
 <figure>
-<figcaption>图3-7 SVR模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-7 SVR模型在NASA PCoE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_svr.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_svr.jpg" width=400 height=300>
@@ -286,7 +286,7 @@ SVR模型来源于支持向量机（support vector machine，SVM）。与SVM类�
 </figure>
 
 <table>
-    <caption>表3-4</caption>
+    <caption>表3-4 SVR模型预测性能评估结果</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -355,7 +355,7 @@ MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结�
 </figure>
 
 <figure>
-<figcaption>图3-9 MLP模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-9 MLP模型在NASA PCoE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_mlp.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_mlp.jpg" width=400 height=300>
@@ -363,7 +363,7 @@ MLP模型在本章第二节介绍RNN网络结构时已简单说明并给出结�
 </figure>
 
 <table>
-    <caption>表3-5</caption>
+    <caption>表3-5 MLP模型预测性能评估结果</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -432,7 +432,7 @@ LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第
 </figure>
 
 <figure>
-<figcaption>图3-11 LSTM模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-11 LSTM模型在NASA PCoE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_lstm.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_lstm.jpg" width=400 height=300>
@@ -440,7 +440,7 @@ LSTM模型原理和结构及本实验中使用的LSTM模型设计已在本章第
 </figure>
 
 <table>
-    <caption>表3-6</caption>
+    <caption>表3-6 LSTM模型预测性能评估结果</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -509,7 +509,7 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
 </figure>
 
 <figure>
-<figcaption>图3-13 CNN模型在NASA数据集上的预测结果</figcaption>
+<figcaption>图3-13 CNN模型在NASA PCoE数据集上的预测结果</figcaption>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0005_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0006_cnn.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_3/nasa_B0007_cnn.jpg" width=400 height=300>
@@ -517,7 +517,7 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
 </figure>
 
 <table>
-    <caption>表3-7</caption>
+    <caption>表3-7 CNN模型预测性能评估结果</caption>
     <tr>
         <td></td>
         <td>NASA PCoE数据集</td>
@@ -578,7 +578,7 @@ CNN模型原理和结构及本实验中使用的CNN模型设计已在本章第�
 将AR模型、SVR模型、MLP模型、LSTM模型和CNN模型在两个数据集上的预测性能取均值汇总如【表3-8】。在NASA PCoE数据集上，AR模型取得了最好的平均性能，其平均MaxE为0.054，平均MAE为0.008，平均RMSE为0.013，MLP模型次之，其平均MaxE、平均MAE和平均RMSE分别为0.111、0.019和0.026。在CALCE数据集上，CNN模型取得了最好的平均性能，其平均MaxE、平均MAE和平均RMSE分别为0.142、0.008和0.013，MLP模型次之，其平均MaxE、平均MAE和平均RMSE分别为0.147、0.009和0.014。需要说明的是，本章设计的实验中，AR模型由于其自身限制，训练时使用的数据划分策略与其他模型不同，且这种数据准备方式限制较多，并不具有实际意义，其性能评估结果仅做参考，从而在NASA PCoE数据集上平均性能最优的模型是MLP模型，其次为CNN模型，CNN模型的平均MaxE、平均MAE和平均RMSE分别为0.113、0.020和0.027。NASA PCoE数据集诞生较早，其中使用的电池的循环寿命相对较短，在这种情况下非隐状态模型如MLP模型和CNN模型往往预测性能较好，隐状态模型即LSTM反而因为参数较多，训练过程复杂并不具备很高的可用性。无论哪一种模型，在CALCE数据集上的预测性能均由于在NASA PCoE数据集上的预测性能，这是由于前者循环寿命更长，能够提供更多的历史信息。
 
 <table>
-    <caption>表3-8</caption>
+    <caption>表3-8 五种模型预测性能评估结果汇总</caption>
     <tr>
         <td>NASA PCoE数据集</td>
         <td></td>

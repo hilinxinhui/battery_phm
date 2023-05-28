@@ -131,7 +131,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 基于以上对数据输入形式的分析和设计，本节讨论基于电池充放电循环中部分充放电数据的电池容量估计/健康状态估计的模型设计。现代CNN模型随着残差块结构的引入，已经具备很大的堆叠规模，但考虑到电池容量估计问题本身易过拟合的特性及模型在低计算能力嵌入式设备的部署问题，本文选择使用更小参数规模的模型。LeNet5是一种早期的CNN结构，其原生处理的问题即具有较小的分辨率，从而其网络层数少、参数量小同时具有相对较高的预测性能。本节基于LeNet5的结构，依据上节讨论的两种不同形式的输入（即不进行时间序列-图像变换和进行时间序列-图像变换两种情形）设计了两种相似的CNN结构，其每层的具体类型、输出形状和参数量归纳如【表4-2】和【表4-3】，其中对输出形状省略了批大小维度。
 
 <table>
-    <caption>表4-2 适用于未进行时间序列-图像变换数据的CNN结构</caption>
+    <caption>表4-2 未进行时间序列-图像变换数据对应卷积神经网络结构</caption>
     <tr>
         <td>层号</td>
         <td>层类型</td>
@@ -189,7 +189,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </table>
 
 <table>
-    <caption>表4-3 适用于进行时间序列-图像变换数据的CNN结构</caption>
+    <caption>表4-3 进行时间序列-图像变换数据对应卷积神经网络结构</caption>
     <tr>
         <td>层号</td>
         <td>层类型</td>
@@ -255,7 +255,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 对于第一组实验，即使用不进行时间序列-时间变换的充放电过程中的电压、电流和温度数据为输入的实验，其在TRI数据上进行电池容量预测的MaxE、MAE和RMSE归纳如【表4-4】，预测值与真值的可视化对比如【图4-1】至【图4-4】。需要说明的是由于有重叠滑动窗口方法的引入，数据集中样本数量远大于循环数（上一章中从第二个时间窗口开始循环数与样本数一一对应），本章图中横坐标表示样本编号。
 
 <table>
-    <caption>表4-4 第一组实验结果</caption>
+    <caption>表4-4 实验一CNN模型预测性能评估结果</caption>
     <tr>
         <td>电池编号</td>
         <td>MaxE</td>
@@ -361,7 +361,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </table>
 
 <figure>
-<figcaption>图4-1 V、I、T输入，不进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-1 实验一CNN模型预测结果（电池分组一）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_vit.jpg" width=400 height=300>
@@ -369,7 +369,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-2 V、I、T输入，不进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-2 实验一CNN模型预测结果（电池分组二）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_vit.jpg" width=400 height=300>
@@ -377,7 +377,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-3 V、I、T输入，不进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-3 实验一CNN模型预测结果（电池分组三）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_vit.jpg" width=400 height=300>
@@ -385,7 +385,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-4 V、I、T输入，不进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-4 实验一CNN模型预测结果（电池分组四）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_vit.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_vit.jpg" width=400 height=300>
@@ -395,7 +395,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 对于第二组实验，即使用进行了时间序列-时间变换的充放电过程中的电压、电流和温度数据为输入的实验，其在TRI数据上进行电池容量预测的MaxE、MAE和RMSE归纳如【表4-5】，预测值与真值的可视化对比如【图4-5】至【图4-8】。
 
 <table>
-    <caption>表4-5 第二组实验结果</caption>
+    <caption>表4-5 实验二CNN模型预测性能评估结果</caption>
     <tr>
         <td>电池编号</td>
         <td>MaxE</td>
@@ -501,7 +501,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </table>
 
 <figure>
-<figcaption>图4-5 V、I、T输入，进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-5 实验二CNN模型预测结果（电池分组一）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -509,7 +509,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-6 V、I、T输入，进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-6 实验二CNN模型预测结果（电池分组二）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -517,7 +517,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-7 V、I、T输入，进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-7 实验二CNN模型预测结果（电池分组三）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -525,7 +525,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-8 V、I、T输入，进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-8 实验二CNN模型预测结果（电池分组四）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_vit_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_vit_trans.jpg" width=400 height=300>
@@ -535,7 +535,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 对于第三组实验，即使用不进行时间序列-时间变换的充放电过程中的电压、电流和电池电荷数据为输入的实验，其在TRI数据上进行电池容量预测的MaxE、MAE和RMSE归纳如【表4-6】，预测值与真值的可视化对比如【图4-9】至【图4-12】。
 
 <table>
-    <caption>表4-6 第三组实验结果</caption>
+    <caption>表4-6 实验三CNN模型预测性能评估结果</caption>
     <tr>
         <td>电池编号</td>
         <td>MaxE</td>
@@ -641,7 +641,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </table>
 
 <figure>
-<figcaption>图4-9 V、I、q输入，不进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-9 实验三CNN模型预测结果（电池分组一）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_viq.jpg" width=400 height=300>
@@ -649,7 +649,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-10 V、I、q输入，不进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-10 实验三CNN模型预测结果（电池分组二）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_viq.jpg" width=400 height=300>
@@ -657,7 +657,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-11 V、I、q输入，不进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-11 实验三CNN模型预测结果（电池分组三）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_viq.jpg" width=400 height=300>
@@ -665,7 +665,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-12 V、I、q输入，不进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-12 实验三CNN模型预测结果（电池分组四）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_viq.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_viq.jpg" width=400 height=300>
@@ -675,7 +675,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 对于第四组实验，即使用进行了时间序列-时间变换的充放电过程中的电压、电流和电池电荷数据为输入的实验，其在TRI数据上进行电池容量预测的MaxE、MAE和RMSE归纳如【表4-7】，预测值与真值的可视化对比如【图4-13】至【图4-16】。
 
 <table>
-    <caption>表4-7 第四组实验结果</caption>
+    <caption>表4-7 实验四CNN模型预测性能评估结果</caption>
     <tr>
         <td>电池编号</td>
         <td>MaxE</td>
@@ -781,7 +781,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </table>
 
 <figure>
-<figcaption>图4-13 V、I、q输入，进行时间序列-图形变换（第一组）</figcaption>
+<figcaption>图4-13 实验四CNN模型预测结果（电池分组一）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group1_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -789,7 +789,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-14 V、I、q输入，进行时间序列-图形变换（第二组）</figcaption>
+<figcaption>图4-14 实验四CNN模型预测结果（电池分组二）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group2_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -797,7 +797,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-15 V、I、q输入，进行时间序列-图形变换（第三组）</figcaption>
+<figcaption>图4-15 实验四CNN模型预测结果（电池分组三）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group3_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -805,7 +805,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <figure>
-<figcaption>图4-16 V、I、q输入，进行时间序列-图形变换（第四组）</figcaption>
+<figcaption>图4-16 实验四CNN模型预测结果（电池分组四）</figcaption>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell1_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell2_cnn_viq_trans.jpg" width=400 height=300>
 <img src="../assets/thesis_figures/chapter_4/tri_group4_cell3_cnn_viq_trans.jpg" width=400 height=300>
@@ -813,7 +813,7 @@ $$ N = floor(\frac{L - w}{w - c}) + 1 \tag{4-1} $$
 </figure>
 
 <table>
-    <caption>表4-8 四组实验结果对比</caption>
+    <caption>表4-8 四组实验CNN模型预测性能评估结果汇总</caption>
     <tr>
         <td>指标</td>
         <td>第一组实验</td>
