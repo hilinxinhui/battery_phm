@@ -465,7 +465,7 @@ if __name__ == "__main__":
     plt.legend(["真值", "AR模型预测值", "SVR模型预测值", "MLP模型预测值", "LSTM模型预测值", "CNN模型预测值"])
     plt.xlabel("循环圈数")
     plt.ylabel("放电容量（Ah）")
-    save_path = "../assets/thesis_figures/chapter_3/silde_figure_nasa.jpg"
+    save_path = "../assets/thesis_figures/chapter_3/slide_figure_nasa.jpg"
     plt.savefig(save_path, dpi=1000, bbox_inches="tight")
     plt.tight_layout()
     plt.show()
