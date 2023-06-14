@@ -21,3 +21,8 @@ datasets/__pycache__
 
 # 不上传字体
 utils/STSong.ttf
+
+# 使用commitizen辅助commit massage生成
+node_modules
+package.json
+package-lock.json
