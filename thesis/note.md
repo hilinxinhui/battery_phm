@@ -157,4 +157,7 @@ if __name__ == "__main__":
     plt.xlabel("index", font)
     save_path = "./font_size_test.jpg"
     plt.savefig(save_path, dpi=1000, bbox_inches="tight")
+
+    # 设置legend字号
+    plt.legend(["示例图线"], fontsize=font["size"])
 ```

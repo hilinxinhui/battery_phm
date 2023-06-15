@@ -13,5 +13,6 @@ if __name__ == "__main__":
     plt.plot(data)
     plt.ylabel("data", font)
     plt.xlabel("index", font)
+    # plt.legend(["正弦曲线"], fontsize=28)
     save_path = "./font_size_test.jpg"
     plt.savefig(save_path, dpi=1000, bbox_inches="tight")
