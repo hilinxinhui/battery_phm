@@ -455,6 +455,10 @@ if __name__ == "__main__":
     cnn_pred = y_pred[-51: ]
 
     # 作图
+    font = {
+        "size": 20
+    }
+
     plt.plot(figsize=(8, 6))
     plt.plot(ar_test_dataset)
     plt.plot(ar_pred)
@@ -463,8 +467,8 @@ if __name__ == "__main__":
     plt.plot(lstm_pred)
     plt.plot(cnn_pred)
     plt.legend(["真值", "AR模型预测值", "SVR模型预测值", "MLP模型预测值", "LSTM模型预测值", "CNN模型预测值"])
-    plt.xlabel("循环圈数")
-    plt.ylabel("放电容量（Ah）")
+    plt.xlabel("循环圈数", font)
+    plt.ylabel("放电容量（Ah）", font)
     save_path = "../assets/thesis_figures/chapter_3/slide_figure_nasa.jpg"
     plt.savefig(save_path, dpi=1000, bbox_inches="tight")
     plt.tight_layout()

@@ -1,4 +1,0 @@
-2023-06-15 11:51:15,697 - nasa_lr - INFO - test dataset: B0005, maxE: 0.094211, mae: 0.017587, rmse:0.023538
-2023-06-15 11:51:16,883 - nasa_lr - INFO - test dataset: B0006, maxE: 0.130897, mae: 0.052500, rmse:0.058806
-2023-06-15 11:51:18,076 - nasa_lr - INFO - test dataset: B0007, maxE: 0.113833, mae: 0.017448, rmse:0.023363
-2023-06-15 11:51:19,306 - nasa_lr - INFO - test dataset: B0018, maxE: 0.112850, mae: 0.029433, rmse:0.036583
