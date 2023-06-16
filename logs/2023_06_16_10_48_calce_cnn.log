@@ -1,0 +1,4 @@
+2023-06-16 10:51:38,139 - calce_cnn - INFO - test dataset: CS2_35, maxE: 0.173205, mae: 0.007494, rmse:0.013782
+2023-06-16 10:54:44,502 - calce_cnn - INFO - test dataset: CS2_36, maxE: 0.123471, mae: 0.008612, rmse:0.014260
+2023-06-16 10:57:47,833 - calce_cnn - INFO - test dataset: CS2_37, maxE: 0.120520, mae: 0.006959, rmse:0.011825
+2023-06-16 11:00:48,754 - calce_cnn - INFO - test dataset: CS2_38, maxE: 0.156642, mae: 0.007403, rmse:0.013078

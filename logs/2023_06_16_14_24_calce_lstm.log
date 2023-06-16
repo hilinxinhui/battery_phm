@@ -1,0 +1,4 @@
+2023-06-16 14:26:20,320 - calce_lstm - INFO - test dataset: CS2_35, maxE: 0.155700, mae: 0.023563, rmse:0.028451
+2023-06-16 14:27:50,771 - calce_lstm - INFO - test dataset: CS2_36, maxE: 0.178090, mae: 0.031186, rmse:0.042909
+2023-06-16 14:29:10,629 - calce_lstm - INFO - test dataset: CS2_37, maxE: 0.164395, mae: 0.017900, rmse:0.025251
+2023-06-16 14:30:31,979 - calce_lstm - INFO - test dataset: CS2_38, maxE: 0.134984, mae: 0.014498, rmse:0.020664

@@ -1,0 +1,4 @@
+2023-06-16 10:32:30,540 - calce_svr - INFO - test dataset: CS2_35, maxE: 0.173213, mae: 0.027749, rmse:0.031600
+2023-06-16 10:32:31,590 - calce_svr - INFO - test dataset: CS2_36, maxE: 0.144716, mae: 0.024278, rmse:0.032347
+2023-06-16 10:32:32,545 - calce_svr - INFO - test dataset: CS2_37, maxE: 0.109326, mae: 0.021895, rmse:0.025152
+2023-06-16 10:32:33,399 - calce_svr - INFO - test dataset: CS2_38, maxE: 0.138677, mae: 0.020879, rmse:0.024601
