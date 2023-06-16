@@ -1,0 +1,24 @@
+2023-06-16 14:55:47,800 - unibo_deeplstm_soh - INFO - average mae: 0.013507, average rmse: 0.021265
+2023-06-16 14:55:49,822 - unibo_deeplstm_soh - INFO - test dataset: 003-DM-3.0-4019-S, rmse: 3.857732, nrmse: 0.035885
+2023-06-16 14:55:51,711 - unibo_deeplstm_soh - INFO - test dataset: 011-DM-3.0-4019-H, rmse: 3.075203, nrmse: 0.028985
+2023-06-16 14:55:53,581 - unibo_deeplstm_soh - INFO - test dataset: 013-DM-3.0-4019-P, rmse: 10.771531, nrmse: 0.181306
+2023-06-16 14:55:55,464 - unibo_deeplstm_soh - INFO - test dataset: 006-EE-2.85-0820-S, rmse: 10.129745, nrmse: 0.028693
+2023-06-16 14:55:57,345 - unibo_deeplstm_soh - INFO - test dataset: 044-EE-2.85-0820-H, rmse: 13.869436, nrmse: 0.047122
+2023-06-16 14:55:59,231 - unibo_deeplstm_soh - INFO - test dataset: 039-DP-2.00-2420-S, rmse: 8.882507, nrmse: 0.019217
+2023-06-16 14:56:01,075 - unibo_deeplstm_soh - INFO - test dataset: 041-DM-4.00-2320-S, rmse: 4.480121, nrmse: 0.051473
+2023-06-16 15:07:53,786 - unibo_deeplstm_soh - INFO - average mae: 0.013507, average rmse: 0.021265
+2023-06-16 15:07:55,542 - unibo_deeplstm_soh - INFO - test dataset: 003-DM-3.0-4019-S, rmse: 3.857732, nrmse: 0.035885
+2023-06-16 15:07:57,290 - unibo_deeplstm_soh - INFO - test dataset: 011-DM-3.0-4019-H, rmse: 3.075203, nrmse: 0.028985
+2023-06-16 15:07:59,028 - unibo_deeplstm_soh - INFO - test dataset: 013-DM-3.0-4019-P, rmse: 10.771531, nrmse: 0.181306
+2023-06-16 15:08:00,779 - unibo_deeplstm_soh - INFO - test dataset: 006-EE-2.85-0820-S, rmse: 10.129745, nrmse: 0.028693
+2023-06-16 15:08:02,619 - unibo_deeplstm_soh - INFO - test dataset: 044-EE-2.85-0820-H, rmse: 13.869436, nrmse: 0.047122
+2023-06-16 15:08:04,380 - unibo_deeplstm_soh - INFO - test dataset: 039-DP-2.00-2420-S, rmse: 8.882507, nrmse: 0.019217
+2023-06-16 15:08:06,118 - unibo_deeplstm_soh - INFO - test dataset: 041-DM-4.00-2320-S, rmse: 4.480121, nrmse: 0.051473
+2023-06-16 15:12:34,827 - unibo_deeplstm_soh - INFO - average mae: 0.013507, average rmse: 0.021265
+2023-06-16 15:12:36,754 - unibo_deeplstm_soh - INFO - test dataset: 003-DM-3.0-4019-S, rmse: 3.857732, nrmse: 0.035885
+2023-06-16 15:12:38,674 - unibo_deeplstm_soh - INFO - test dataset: 011-DM-3.0-4019-H, rmse: 3.075203, nrmse: 0.028985
+2023-06-16 15:12:40,598 - unibo_deeplstm_soh - INFO - test dataset: 013-DM-3.0-4019-P, rmse: 10.771531, nrmse: 0.181306
+2023-06-16 15:12:42,528 - unibo_deeplstm_soh - INFO - test dataset: 006-EE-2.85-0820-S, rmse: 10.129745, nrmse: 0.028693
+2023-06-16 15:12:44,454 - unibo_deeplstm_soh - INFO - test dataset: 044-EE-2.85-0820-H, rmse: 13.869436, nrmse: 0.047122
+2023-06-16 15:12:46,381 - unibo_deeplstm_soh - INFO - test dataset: 039-DP-2.00-2420-S, rmse: 8.882507, nrmse: 0.019217
+2023-06-16 15:12:48,287 - unibo_deeplstm_soh - INFO - test dataset: 041-DM-4.00-2320-S, rmse: 4.480121, nrmse: 0.051473

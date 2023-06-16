@@ -1,0 +1,8 @@
+2023-06-16 14:41:38,483 - unibo_deeplstm_cycle - INFO - average mae: 0.013507, average rmse: 0.021265
+2023-06-16 14:41:39,501 - unibo_deeplstm_cycle - INFO - test dataset: 003-DM-3.0-4019-S, rmse: 3.857732, nrmse: 0.035885
+2023-06-16 14:41:40,145 - unibo_deeplstm_cycle - INFO - test dataset: 011-DM-3.0-4019-H, rmse: 3.075203, nrmse: 0.028985
+2023-06-16 14:41:40,846 - unibo_deeplstm_cycle - INFO - test dataset: 013-DM-3.0-4019-P, rmse: 10.771531, nrmse: 0.181306
+2023-06-16 14:41:41,530 - unibo_deeplstm_cycle - INFO - test dataset: 006-EE-2.85-0820-S, rmse: 10.129745, nrmse: 0.028693
+2023-06-16 14:41:42,199 - unibo_deeplstm_cycle - INFO - test dataset: 044-EE-2.85-0820-H, rmse: 13.869436, nrmse: 0.047122
+2023-06-16 14:41:42,866 - unibo_deeplstm_cycle - INFO - test dataset: 039-DP-2.00-2420-S, rmse: 8.882507, nrmse: 0.019217
+2023-06-16 14:41:43,519 - unibo_deeplstm_cycle - INFO - test dataset: 041-DM-4.00-2320-S, rmse: 4.480121, nrmse: 0.051473
